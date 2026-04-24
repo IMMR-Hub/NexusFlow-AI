@@ -793,26 +793,6 @@ footer {
 </head>
 <body>
 
-<!-- Netlify Forms detection (hidden) -->
-<form name="auditoria" netlify netlify-honeypot="bot-field" hidden>
-  <input type="text" name="nombre" />
-  <input type="text" name="negocio" />
-  <input type="text" name="pais" />
-  <input type="text" name="whatsapp" />
-  <input type="email" name="email" />
-  <input type="text" name="tipo_negocio" />
-  <input type="text" name="google_profile" />
-  <input type="text" name="recibe_wa" />
-  <input type="text" name="recibe_email" />
-  <input type="text" name="objetivos" />
-  <input type="text" name="consultas_semana" />
-  <input type="text" name="leads_perdidos" />
-  <input type="text" name="sitio_web" />
-  <textarea name="cuello_botella"></textarea>
-  <input type="text" name="idioma" />
-  <input type="text" name="fecha" />
-</form>
-
 <!-- ============================================================
      NAV
      ============================================================ -->
@@ -1951,12 +1931,12 @@ function submitForm() {
   document.getElementById('form-progress').style.display = 'none';
   document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-  // Send via Netlify Forms (non-blocking)
-  fetch('/', {
+  // Send via Web3Forms (non-blocking)
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams({
-      'form-name':       'auditoria',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      access_key: '4c24ecc5-e444-4427-8630-401bd17f17d1',
       nombre:            entry.name,
       negocio:           entry.biz,
       pais:              entry.country,
@@ -1972,12 +1952,13 @@ function submitForm() {
       sitio_web:         entry.url,
       cuello_botella:    entry.bottleneck,
       idioma:            entry.lang,
-      fecha:             entry.date
-    }).toString()
+      fecha:             entry.date,
+      to_email:          'form.nexusflowai@gmail.com'
+    })
   }).then(() => {
-    console.log('Formulario enviado a Netlify OK');
+    console.log('Formulario enviado a Web3Forms OK');
   }).catch(err => {
-    console.warn('Netlify form error:', err);
+    console.warn('Web3Forms error:', err);
   });
 }
 
