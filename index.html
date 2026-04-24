@@ -1,0 +1,2092 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NexusFlow AI — Every Missed Lead Is Revenue You Already Earned">
+<title>NexusFlow AI — Stop Losing Leads. Start Converting More.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root {
+  --bg: #0d0d0d;
+  --bg-1: #131313;
+  --bg-2: #1a1a1a;
+  --bg-3: #222222;
+  --surface-light: #f5f3ef;
+  --surface-light-2: #ede9e2;
+  --surface-light-3: #e4dfd6;
+  --ink: #ffffff;
+  --ink-80: rgba(255,255,255,0.80);
+  --ink-50: rgba(255,255,255,0.50);
+  --ink-25: rgba(255,255,255,0.25);
+  --ink-10: rgba(255,255,255,0.10);
+  --ink-06: rgba(255,255,255,0.06);
+  --dark-ink: #0d0d0d;
+  --dark-ink-70: rgba(13,13,13,0.70);
+  --dark-ink-40: rgba(13,13,13,0.40);
+  /* ACCENT — orange-amber: urgency, energy, action */
+  --accent: #E8621A;
+  --accent-hover: #D45512;
+  --accent-dim: rgba(232,98,26,0.15);
+  --accent-border: rgba(232,98,26,0.30);
+  /* CONFIRM — emerald: gain, safety, growth */
+  --green: #1DB87A;
+  --green-dim: rgba(29,184,122,0.12);
+  --green-border: rgba(29,184,122,0.30);
+  /* WA */
+  --wa: #25D366;
+  --wa-dark: #128C4A;
+
+  --radius-sm: 6px;
+  --radius: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+  --font-head: 'Clash Display', sans-serif;
+  --font-body: 'Instrument Sans', sans-serif;
+  --max: 1160px;
+}
+
+/* ============================================================
+   RESET + BASE
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+.container { max-width: var(--max); margin: 0 auto; padding: 0 28px; }
+.section-pad { padding: 100px 28px; }
+.section-pad-sm { padding: 72px 28px; }
+
+/* Scroll reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ============================================================
+   TYPOGRAPHY
+   ============================================================ */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body); font-size: 11px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 18px;
+}
+.eyebrow::before {
+  content: ''; display: block; width: 18px; height: 1.5px; background: var(--accent);
+}
+.h1 {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: clamp(40px, 5.5vw, 70px);
+  line-height: 1.04; letter-spacing: -2px;
+}
+.h2 {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.08; letter-spacing: -1.5px;
+}
+.h3 {
+  font-family: var(--font-head); font-weight: 600;
+  font-size: clamp(20px, 2.5vw, 26px);
+  line-height: 1.15; letter-spacing: -0.5px;
+}
+.lead { font-size: 18px; font-weight: 300; line-height: 1.75; color: var(--ink-80); }
+.body-sm { font-size: 14px; line-height: 1.7; color: var(--ink-50); }
+em.accent { color: var(--accent); font-style: normal; }
+em.green { color: var(--green); font-style: normal; }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-body); font-size: 15px; font-weight: 500;
+  padding: 13px 24px; border-radius: var(--radius); border: none;
+  cursor: pointer; transition: all 0.18s; white-space: nowrap;
+  text-decoration: none;
+}
+.btn-cta {
+  background: var(--accent); color: #fff;
+  box-shadow: 0 0 0 0 rgba(232,98,26,0);
+}
+.btn-cta:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 8px 32px rgba(232,98,26,0.40);
+  transform: translateY(-1px);
+}
+.btn-outline {
+  background: transparent; color: var(--ink);
+  border: 1.5px solid rgba(255,255,255,0.2);
+}
+.btn-outline:hover {
+  border-color: rgba(255,255,255,0.6);
+  background: var(--ink-06);
+}
+.btn-wa {
+  background: var(--wa); color: #fff;
+}
+.btn-wa:hover { background: var(--wa-dark); transform: translateY(-1px); }
+.btn-dark {
+  background: var(--dark-ink); color: #fff;
+}
+.btn-dark:hover { background: #1a1a1a; transform: translateY(-1px); }
+.btn-light {
+  background: var(--surface-light); color: var(--dark-ink);
+}
+.btn-light:hover { background: #fff; transform: translateY(-1px); }
+.btn-lg { font-size: 17px; padding: 16px 32px; }
+.btn-sm { font-size: 13px; padding: 9px 18px; }
+.btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+nav {
+  position: sticky; top: 0; z-index: 900;
+  background: rgba(13,13,13,0.88);
+  backdrop-filter: blur(16px) saturate(180%);
+  border-bottom: 1px solid var(--ink-10);
+}
+.nav-inner {
+  max-width: var(--max); margin: 0 auto; padding: 0 28px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.nav-logo {
+  font-family: var(--font-head); font-weight: 700; font-size: 20px;
+  letter-spacing: -0.5px; color: var(--ink);
+}
+.nav-logo span { color: var(--accent); }
+.nav-right { display: flex; align-items: center; gap: 10px; }
+.lang-switcher {
+  display: flex; align-items: center; gap: 3px;
+  background: var(--ink-06); border: 1px solid var(--ink-10);
+  border-radius: var(--radius); padding: 4px;
+  margin-right: 6px;
+}
+.lang-btn {
+  font-family: var(--font-body); font-size: 12px; font-weight: 500;
+  color: var(--ink-50); background: none; border: none;
+  padding: 5px 10px; border-radius: 6px; cursor: pointer;
+  transition: all 0.18s; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.lang-btn.active {
+  background: var(--accent); color: #fff;
+}
+.lang-btn:not(.active):hover { color: var(--ink); background: var(--ink-06); }
+@media (max-width: 640px) {
+  .nav-desktop-btns { display: none; }
+  .lang-btn { padding: 5px 8px; font-size: 11px; }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: center;
+  background: var(--bg);
+  position: relative; overflow: hidden;
+  padding: 120px 28px 80px;
+}
+/* Geometric accent — grid lines */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(232,98,26,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,98,26,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+/* Radial glow */
+.hero::after {
+  content: '';
+  position: absolute; top: -20%; right: -10%;
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(232,98,26,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: var(--max); margin: 0 auto; width: 100%;
+  position: relative; z-index: 1;
+}
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-dim); border: 1px solid var(--accent-border);
+  color: var(--accent); font-size: 12px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 6px 14px; border-radius: 100px;
+  margin-bottom: 28px;
+}
+.hero-tag::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent); animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+.hero h1 { color: var(--ink); margin-bottom: 28px; max-width: 820px; }
+.hero .lead { max-width: 560px; margin-bottom: 44px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 64px; }
+/* Loss counter strip */
+.hero-loss-strip {
+  display: flex; gap: 0; flex-wrap: wrap;
+  border: 1px solid var(--ink-10);
+  border-radius: var(--radius-lg);
+  overflow: hidden; max-width: 700px;
+  background: var(--ink-06);
+}
+.hero-loss-item {
+  flex: 1; min-width: 160px;
+  padding: 20px 24px;
+  border-right: 1px solid var(--ink-10);
+}
+.hero-loss-item:last-child { border-right: none; }
+.hero-loss-num {
+  font-family: var(--font-head); font-size: 36px; font-weight: 700;
+  color: var(--accent); line-height: 1; margin-bottom: 4px;
+}
+.hero-loss-label { font-size: 12px; color: var(--ink-50); line-height: 1.5; }
+@media (max-width: 600px) {
+  .hero-loss-item { min-width: 140px; }
+  .hero-loss-num { font-size: 28px; }
+}
+
+/* ============================================================
+   PAIN CALCULATOR — psychological amplifier
+   ============================================================ */
+.pain-calc {
+  background: var(--surface-light);
+  padding: 100px 28px;
+}
+.pain-calc-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+}
+@media (max-width: 820px) { .pain-calc-inner { grid-template-columns: 1fr; gap: 48px; } }
+.pain-calc .eyebrow { color: var(--accent); }
+.pain-calc .eyebrow::before { background: var(--accent); }
+.pain-calc .h2 { color: var(--dark-ink); }
+.pain-calc .lead { color: var(--dark-ink-70); }
+.calc-box {
+  background: #fff;
+  border-radius: var(--radius-xl);
+  padding: 36px 32px;
+  box-shadow: 0 2px 40px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.06);
+}
+.calc-box h4 {
+  font-family: var(--font-head); font-size: 18px; font-weight: 600;
+  color: var(--dark-ink); margin-bottom: 24px;
+  padding-bottom: 16px; border-bottom: 1px solid #e8e4de;
+}
+.calc-row {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px; gap: 16px;
+}
+.calc-row label {
+  font-size: 14px; color: var(--dark-ink-70); max-width: 200px; line-height: 1.4;
+}
+.calc-row input[type="range"] {
+  flex: 1; accent-color: var(--accent);
+  height: 4px; cursor: pointer;
+}
+.calc-row .calc-val {
+  font-family: var(--font-head); font-size: 18px; font-weight: 700;
+  color: var(--dark-ink); min-width: 44px; text-align: right;
+}
+.calc-result {
+  margin-top: 24px; padding: 20px 24px;
+  background: var(--dark-ink); border-radius: var(--radius-lg);
+  text-align: center;
+}
+.calc-result-label { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+.calc-result-num {
+  font-family: var(--font-head); font-size: 38px; font-weight: 700;
+  color: var(--accent); line-height: 1;
+}
+.calc-result-sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 6px; }
+.calc-cta { margin-top: 20px; width: 100%; justify-content: center; border-radius: var(--radius); }
+
+/* ============================================================
+   PROBLEM
+   ============================================================ */
+.problem { background: var(--bg-1); padding: 100px 28px; }
+.problem-header { text-align: center; max-width: 640px; margin: 0 auto 64px; }
+.problem-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2px; max-width: var(--max); margin: 0 auto;
+}
+.problem-card {
+  background: var(--bg-2);
+  padding: 36px 30px;
+  transition: background 0.2s;
+  position: relative; overflow: hidden;
+}
+.problem-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent); transform: scaleX(0); transform-origin: left;
+  transition: transform 0.3s;
+}
+.problem-card:hover { background: var(--bg-3); }
+.problem-card:hover::before { transform: scaleX(1); }
+.problem-num {
+  font-family: var(--font-head); font-size: 48px; font-weight: 700;
+  color: var(--ink-10); line-height: 1; margin-bottom: 16px;
+}
+.problem-card h3 {
+  font-family: var(--font-head); font-size: 17px; font-weight: 600;
+  color: var(--ink); margin-bottom: 10px;
+}
+.problem-card p { font-size: 14px; color: var(--ink-50); line-height: 1.7; }
+.problem-truth {
+  max-width: var(--max); margin: 48px auto 0;
+  background: var(--accent);
+  border-radius: var(--radius-xl); padding: 48px 52px;
+  display: flex; align-items: center; justify-content: space-between; gap: 32px;
+  flex-wrap: wrap;
+}
+.problem-truth-text {
+  font-family: var(--font-head); font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700; color: #fff; max-width: 640px; line-height: 1.25;
+}
+@media (max-width: 700px) { .problem-truth { padding: 36px 28px; } }
+
+/* ============================================================
+   SOLUTION
+   ============================================================ */
+.solution { background: var(--bg); padding: 100px 28px; }
+.solution-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+}
+@media (max-width: 820px) { .solution-inner { grid-template-columns: 1fr; gap: 56px; } }
+.solution-points { margin-top: 48px; display: flex; flex-direction: column; gap: 32px; }
+.sol-point { display: flex; gap: 20px; }
+.sol-point-bar {
+  flex-shrink: 0;
+  width: 3px; border-radius: 2px;
+  background: var(--ink-10);
+  position: relative; min-height: 60px;
+}
+.sol-point-bar::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0;
+  background: var(--accent); border-radius: 2px;
+  height: 0; transition: height 1.2s ease;
+}
+.sol-point.visible .sol-point-bar::after { height: 100%; }
+.sol-point h4 {
+  font-family: var(--font-head); font-size: 17px; font-weight: 600;
+  margin-bottom: 6px; color: var(--ink);
+}
+.sol-point p { font-size: 14px; color: var(--ink-50); line-height: 1.7; }
+.solution-checklist {
+  background: var(--bg-2); border: 1px solid var(--ink-10);
+  border-radius: var(--radius-xl); padding: 36px 32px;
+  position: sticky; top: 88px;
+}
+.solution-checklist h4 {
+  font-family: var(--font-head); font-size: 16px; font-weight: 600;
+  color: var(--ink-50); text-transform: uppercase; letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+.check-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 0; border-bottom: 1px solid var(--ink-06);
+  font-size: 14px; color: var(--ink-80); line-height: 1.5;
+}
+.check-item:last-child { border-bottom: none; }
+.check-dot {
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--green-dim); border: 1px solid var(--green-border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 1px;
+  font-size: 11px; color: var(--green); font-weight: 700;
+}
+
+/* ============================================================
+   HOW IT WORKS
+   ============================================================ */
+.how { background: var(--surface-light); padding: 100px 28px; }
+.how .h2 { color: var(--dark-ink); }
+.how .lead { color: var(--dark-ink-70); }
+.how .eyebrow { color: var(--accent); }
+.how .eyebrow::before { background: var(--accent); }
+.steps-container {
+  max-width: var(--max); margin: 64px auto 0;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+@media (max-width: 700px) { .steps-container { grid-template-columns: 1fr; } }
+.step-card {
+  background: #fff;
+  border-radius: var(--radius-xl); padding: 40px 32px 40px 32px;
+  box-shadow: 0 1px 20px rgba(0,0,0,0.06);
+  position: relative; overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.step-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+.step-card:nth-child(1) { border-top: 3px solid var(--accent); }
+.step-card:nth-child(2) { border-top: 3px solid var(--dark-ink); }
+.step-card:nth-child(3) { border-top: 3px solid var(--green); }
+.step-num {
+  font-family: var(--font-head); font-size: 56px; font-weight: 700;
+  color: #e8e3dc; line-height: 1;
+  position: absolute; top: 16px; right: 20px;
+  pointer-events: none; user-select: none;
+}
+.step-card h3 { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--dark-ink); margin-bottom: 12px; position: relative; z-index: 1; }
+.step-card p { font-size: 14px; color: var(--dark-ink-70); line-height: 1.7; position: relative; z-index: 1; }
+.step-duration {
+  margin-top: 20px; display: inline-flex; align-items: center; gap: 6px;
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  background: rgba(232,98,26,0.08); padding: 4px 12px; border-radius: 100px;
+}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services { background: var(--bg-1); padding: 100px 28px; }
+.services-grid {
+  max-width: var(--max); margin: 64px auto 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.service-card {
+  background: var(--bg-2); border: 1px solid var(--ink-10);
+  border-radius: var(--radius-xl); padding: 36px 28px;
+  display: flex; flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s, background 0.25s;
+  cursor: default;
+}
+.service-card:hover {
+  border-color: var(--accent); background: var(--bg-3);
+  transform: translateY(-4px);
+}
+.service-icon {
+  width: 48px; height: 48px; border-radius: var(--radius);
+  background: var(--accent-dim); border: 1px solid var(--accent-border);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 20px; font-size: 20px;
+}
+.service-tag {
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 12px; display: block;
+}
+.service-card h3 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 12px; }
+.service-card p { font-size: 14px; color: var(--ink-50); line-height: 1.7; flex: 1; }
+.service-benefit {
+  margin-top: 24px; padding-top: 20px;
+  border-top: 1px solid var(--ink-10);
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 500; color: var(--green);
+}
+
+/* ============================================================
+   FORM SECTION
+   ============================================================ */
+.form-section { background: var(--surface-light); padding: 100px 28px; }
+.form-section-inner { max-width: 680px; margin: 0 auto; }
+.form-section .h2 { color: var(--dark-ink); text-align: center; margin-bottom: 12px; }
+.form-section .lead { color: var(--dark-ink-70); text-align: center; max-width: 540px; margin: 0 auto 48px; }
+.form-section .eyebrow { color: var(--accent); display: flex; justify-content: center; }
+.form-section .eyebrow::before { background: var(--accent); }
+.form-card {
+  background: #fff;
+  border-radius: var(--radius-xl); padding: 52px 48px;
+  box-shadow: 0 4px 60px rgba(0,0,0,0.10);
+}
+@media (max-width: 600px) { .form-card { padding: 32px 22px; } }
+/* Progress */
+.form-progress { display: flex; gap: 6px; margin-bottom: 40px; }
+.fp-seg {
+  flex: 1; height: 4px; border-radius: 2px;
+  background: #e8e4de; transition: background 0.4s;
+}
+.fp-seg.done { background: var(--green); }
+.fp-seg.active { background: var(--accent); }
+.form-step { display: none; }
+.form-step.active { display: block; }
+.step-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 8px; display: block;
+}
+.step-title {
+  font-family: var(--font-head); font-size: 22px; font-weight: 700;
+  color: var(--dark-ink); margin-bottom: 28px; line-height: 1.2;
+}
+/* Form fields */
+.fg { margin-bottom: 18px; }
+.fg label { display: block; font-size: 13px; font-weight: 500; color: #666; margin-bottom: 6px; }
+.fg input, .fg select, .fg textarea {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid #e0dbd3; border-radius: var(--radius);
+  font-family: var(--font-body); font-size: 15px; color: var(--dark-ink);
+  background: #fdfcfb; outline: none;
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(232,98,26,0.10);
+}
+.fg textarea { resize: vertical; min-height: 90px; }
+.fg-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 540px) { .fg-row { grid-template-columns: 1fr; } }
+/* Radio pills */
+.radio-pills { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.rp input { display: none; }
+.rp label {
+  display: inline-block; padding: 9px 18px;
+  border: 1.5px solid #e0dbd3; border-radius: 100px;
+  font-size: 14px; cursor: pointer; color: var(--dark-ink);
+  background: #fdfcfb; transition: all 0.18s; margin: 0;
+  user-select: none;
+}
+.rp input:checked + label {
+  border-color: var(--accent); background: var(--accent); color: #fff;
+}
+/* Checkbox tags */
+.check-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+.ct input { display: none; }
+.ct label {
+  display: inline-block; padding: 8px 16px;
+  border: 1.5px solid #e0dbd3; border-radius: var(--radius-sm);
+  font-size: 13px; cursor: pointer; color: #555;
+  transition: all 0.18s; margin: 0; user-select: none;
+}
+.ct input:checked + label {
+  border-color: var(--accent); background: rgba(232,98,26,0.08);
+  color: var(--accent); font-weight: 500;
+}
+/* Nav */
+.form-nav {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 36px;
+}
+.btn-back-form {
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-body); font-size: 14px; color: #999;
+  padding: 8px 0; text-decoration: underline; transition: color 0.18s;
+}
+.btn-back-form:hover { color: var(--dark-ink); }
+.btn-form-next, .btn-form-submit {
+  font-family: var(--font-body); font-size: 15px; font-weight: 600;
+  background: var(--accent); color: #fff; border: none;
+  padding: 14px 32px; border-radius: var(--radius); cursor: pointer;
+  transition: all 0.18s; min-width: 160px;
+}
+.btn-form-next:hover, .btn-form-submit:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 8px 24px rgba(232,98,26,0.30);
+  transform: translateY(-1px);
+}
+.step-counter { font-size: 12px; color: #bbb; }
+/* Success */
+.form-success { display: none; text-align: center; padding: 24px 0; }
+.success-check {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--green-dim); border: 2px solid var(--green-border);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 24px; font-size: 30px; color: var(--green);
+}
+.form-success h3 { font-family: var(--font-head); font-size: 26px; font-weight: 700; color: var(--dark-ink); margin-bottom: 12px; }
+.form-success p { font-size: 15px; color: var(--dark-ink-70); max-width: 420px; margin: 0 auto 28px; }
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.faq { background: var(--bg); padding: 100px 28px; }
+.faq-inner { max-width: 700px; margin: 0 auto; }
+.faq-header { text-align: center; margin-bottom: 56px; }
+.faq-item { border-bottom: 1px solid var(--ink-10); }
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; gap: 20px; text-align: left;
+  font-family: var(--font-head); font-size: 17px; font-weight: 600;
+  color: var(--ink); transition: color 0.18s;
+}
+.faq-q:hover { color: var(--accent); }
+.faq-toggle {
+  flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+  background: var(--ink-06); border: 1px solid var(--ink-10);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 300; color: var(--ink-50);
+  transition: transform 0.3s, background 0.2s;
+}
+.faq-item.open .faq-toggle { transform: rotate(45deg); background: var(--accent-dim); color: var(--accent); }
+.faq-a {
+  display: none; padding-bottom: 22px;
+  font-size: 15px; color: var(--ink-50); line-height: 1.75;
+}
+.faq-item.open .faq-a { display: block; }
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta {
+  background: var(--surface-light); padding: 120px 28px; text-align: center;
+  position: relative; overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(232,98,26,0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+.final-cta .h2 { color: var(--dark-ink); max-width: 640px; margin: 0 auto 20px; }
+.final-cta .lead { color: var(--dark-ink-70); max-width: 500px; margin: 0 auto 40px; }
+.final-cta .eyebrow { color: var(--accent); justify-content: center; display: flex; }
+.final-cta .eyebrow::before { background: var(--accent); }
+.final-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+  background: #080808; padding: 48px 28px 32px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-inner {
+  max-width: var(--max); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  gap: 32px; flex-wrap: wrap; margin-bottom: 40px;
+}
+.footer-brand-name { font-family: var(--font-head); font-weight: 700; font-size: 18px; color: var(--ink); margin-bottom: 6px; }
+.footer-brand-name span { color: var(--accent); }
+.footer-tagline { font-size: 13px; color: var(--ink-50); }
+.footer-links { display: flex; gap: 8px; flex-direction: column; }
+.footer-links a { font-size: 13px; color: var(--ink-50); transition: color 0.18s; }
+.footer-links a:hover { color: var(--ink); }
+.footer-bottom {
+  max-width: var(--max); margin: 0 auto;
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.06);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-copy { font-size: 12px; color: var(--ink-25); }
+.footer-admin { font-size: 12px; color: rgba(255,255,255,0.08); cursor: pointer; }
+.footer-admin:hover { color: var(--ink-25); }
+
+/* ============================================================
+   STICKY WA
+   ============================================================ */
+.sticky-wa {
+  position: fixed; bottom: 28px; right: 28px; z-index: 800;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: var(--wa); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+}
+.sticky-wa:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.55); }
+.sticky-wa svg { width: 28px; height: 28px; }
+
+/* ============================================================
+   ADMIN PANEL
+   ============================================================ */
+#admin-overlay {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+  overflow-y: auto; padding: 24px;
+}
+.admin-box {
+  max-width: 960px; margin: 0 auto;
+  background: #141414; border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-xl); overflow: hidden;
+}
+.admin-top {
+  background: #1a1a1a; padding: 28px 36px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.admin-top h2 { font-family: var(--font-head); font-size: 20px; font-weight: 700; color: var(--ink); }
+.admin-top h2 span { color: var(--accent); }
+.admin-close-btn {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12);
+  color: var(--ink-80); border-radius: 8px; padding: 7px 16px;
+  cursor: pointer; font-size: 13px; font-family: var(--font-body);
+  transition: background 0.18s;
+}
+.admin-close-btn:hover { background: rgba(255,255,255,0.15); }
+.admin-content { padding: 36px; }
+.admin-kpis {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 36px;
+}
+@media (max-width: 600px) { .admin-kpis { grid-template-columns: 1fr; } }
+.admin-kpi {
+  background: var(--bg-2); border: 1px solid var(--ink-10);
+  border-radius: var(--radius-lg); padding: 24px; text-align: center;
+}
+.admin-kpi-num { font-family: var(--font-head); font-size: 36px; font-weight: 700; color: var(--ink); }
+.admin-kpi-label { font-size: 12px; color: var(--ink-50); margin-top: 4px; }
+.lead-row {
+  background: var(--bg-2); border: 1px solid var(--ink-10);
+  border-radius: var(--radius-lg); margin-bottom: 10px; overflow: hidden;
+}
+.lead-row-header {
+  padding: 16px 22px; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background 0.18s;
+}
+.lead-row-header:hover { background: var(--bg-3); }
+.lead-row-name { font-family: var(--font-head); font-size: 15px; font-weight: 700; color: var(--ink); }
+.lead-row-meta { font-size: 12px; color: var(--ink-50); margin-top: 2px; }
+.lead-row-date { font-size: 12px; color: var(--ink-25); flex-shrink: 0; }
+.lead-row-body { display: none; padding: 24px; border-top: 1px solid var(--ink-06); }
+.lead-row-body.open { display: block; }
+.lead-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 540px) { .lead-fields { grid-template-columns: 1fr; } }
+.lead-field-item { font-size: 13px; }
+.lfi-label { color: var(--ink-25); margin-bottom: 2px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+.lfi-val { color: var(--ink-80); font-weight: 500; }
+.lfi-full { grid-column: 1/-1; }
+.lead-bottleneck {
+  background: var(--bg-3); border-left: 3px solid var(--accent);
+  padding: 14px 18px; border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 14px; color: var(--ink-80); font-style: italic; margin-top: 4px;
+}
+.new-badge {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  background: var(--accent); color: #fff; padding: 2px 8px;
+  border-radius: 4px; margin-left: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.admin-empty { text-align: center; padding: 60px; color: var(--ink-50); }
+.admin-danger-btn {
+  background: none; border: 1px solid rgba(255,80,80,0.3); color: rgba(255,80,80,0.6);
+  padding: 8px 16px; border-radius: var(--radius); font-size: 13px;
+  cursor: pointer; margin-top: 28px; font-family: var(--font-body);
+  transition: all 0.18s;
+}
+.admin-danger-btn:hover { border-color: #ff5050; color: #ff5050; }
+
+/* ============================================================
+   RESPONSIVE HELPERS
+   ============================================================ */
+@media (max-width: 860px) {
+  .section-pad { padding: 72px 22px; }
+  .solution-checklist { position: static; }
+}
+@media (max-width: 480px) {
+  .hero-loss-strip { flex-direction: column; }
+  .hero-loss-item { border-right: none; border-bottom: 1px solid var(--ink-10); }
+  .hero-loss-item:last-child { border-bottom: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- Netlify Forms detection (hidden) -->
+<form name="auditoria" netlify netlify-honeypot="bot-field" hidden>
+  <input type="text" name="nombre" />
+  <input type="text" name="negocio" />
+  <input type="text" name="pais" />
+  <input type="text" name="whatsapp" />
+  <input type="email" name="email" />
+  <input type="text" name="tipo_negocio" />
+  <input type="text" name="google_profile" />
+  <input type="text" name="recibe_wa" />
+  <input type="text" name="recibe_email" />
+  <input type="text" name="objetivos" />
+  <input type="text" name="consultas_semana" />
+  <input type="text" name="leads_perdidos" />
+  <input type="text" name="sitio_web" />
+  <textarea name="cuello_botella"></textarea>
+  <input type="text" name="idioma" />
+  <input type="text" name="fecha" />
+</form>
+
+<!-- ============================================================
+     NAV
+     ============================================================ -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Nexus<span>Flow</span> AI</a>
+    <div class="nav-right">
+      <div class="lang-switcher">
+        <button class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button class="lang-btn" onclick="setLang('es')">ES</button>
+        <button class="lang-btn" onclick="setLang('pt')">PT</button>
+      </div>
+      <a href="#form" class="btn btn-outline btn-sm nav-desktop-btns" data-i18n="nav_audit">Free Audit</a>
+      <a href="https://wa.me/595991000000" class="btn btn-wa btn-sm" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="hero-inner reveal">
+    <div class="hero-tag" data-i18n="hero_tag">Lead Conversion System</div>
+    <h1 class="h1" data-i18n="hero_h1">
+      You're losing clients<br><em class="accent">every single week.</em><br>Without realizing it.
+    </h1>
+    <p class="lead" data-i18n="hero_sub">
+      Every slow reply, weak Google profile, and unanswered WhatsApp message is a client that chose your competitor. We fix that — fast.
+    </p>
+    <div class="hero-btns">
+      <a href="#form" class="btn btn-cta btn-lg" data-i18n="cta_audit">Get Free Mini Audit</a>
+      <a href="https://wa.me/595991000000?text=Hi%2C%20I%20want%20to%20talk%20about%20my%20leads." class="btn btn-outline btn-lg" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-i18n="cta_wa">Talk on WhatsApp</span>
+      </a>
+    </div>
+    <div class="hero-loss-strip">
+      <div class="hero-loss-item">
+        <div class="hero-loss-num">78<span style="font-size:20px">%</span></div>
+        <div class="hero-loss-label" data-i18n="stat1">of leads book with whoever responds first</div>
+      </div>
+      <div class="hero-loss-item">
+        <div class="hero-loss-num">7x</div>
+        <div class="hero-loss-label" data-i18n="stat2">higher conversion when you reply in under 5 minutes</div>
+      </div>
+      <div class="hero-loss-item">
+        <div class="hero-loss-num">44<span style="font-size:20px">%</span></div>
+        <div class="hero-loss-label" data-i18n="stat3">of businesses never follow up after first contact</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PAIN CALCULATOR (Loss Amplifier)
+     ============================================================ -->
+<section class="pain-calc">
+  <div class="pain-calc-inner container">
+    <div class="reveal">
+      <div class="eyebrow" data-i18n="calc_eyebrow">Revenue leak calculator</div>
+      <h2 class="h2" style="color:var(--dark-ink);margin-bottom:20px" data-i18n="calc_h2">How much are you<br><em class="accent">actually losing</em> per month?</h2>
+      <p class="lead" data-i18n="calc_sub">Move the sliders to see the real cost of doing nothing. Most businesses are shocked.</p>
+    </div>
+    <div class="calc-box reveal reveal-delay-2">
+      <h4 data-i18n="calc_title">Your situation</h4>
+      <div class="calc-row">
+        <label data-i18n="calc_l1">Weekly inquiries</label>
+        <input type="range" id="r-inq" min="5" max="300" value="40" step="5" oninput="calcLoss()">
+        <span class="calc-val" id="v-inq">40</span>
+      </div>
+      <div class="calc-row">
+        <label data-i18n="calc_l2">% not answered same day</label>
+        <input type="range" id="r-miss" min="5" max="80" value="30" step="5" oninput="calcLoss()">
+        <span class="calc-val" id="v-miss">30%</span>
+      </div>
+      <div class="calc-row">
+        <label data-i18n="calc_l3">Average ticket value (USD)</label>
+        <input type="range" id="r-val" min="50" max="5000" value="300" step="50" oninput="calcLoss()">
+        <span class="calc-val" id="v-val">$300</span>
+      </div>
+      <div class="calc-row">
+        <label data-i18n="calc_l4">Conversion rate with fast reply (%)</label>
+        <input type="range" id="r-conv" min="10" max="70" value="35" step="5" oninput="calcLoss()">
+        <span class="calc-val" id="v-conv">35%</span>
+      </div>
+      <div class="calc-result">
+        <div class="calc-result-label" data-i18n="calc_result_label">Estimated monthly revenue leaking</div>
+        <div class="calc-result-num" id="calc-out">$6,300</div>
+        <div class="calc-result-sub" data-i18n="calc_result_sub">per month in unrealized revenue from lost leads</div>
+      </div>
+      <a href="#form" class="btn btn-cta btn-lg calc-cta" data-i18n="calc_cta">Fix This Now — Free Audit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PROBLEM
+     ============================================================ -->
+<section class="problem">
+  <div class="container">
+    <div class="problem-header reveal">
+      <div class="eyebrow" data-i18n="prob_eyebrow">Where you're bleeding</div>
+      <h2 class="h2" data-i18n="prob_h2">The hidden leaks<br>killing your <em class="accent">conversion</em></h2>
+      <p class="lead" style="max-width:520px;margin:16px auto 0" data-i18n="prob_sub">You don't need more ads. You need to stop leaking the demand you already have.</p>
+    </div>
+    <div class="problem-grid reveal">
+      <div class="problem-card">
+        <div class="problem-num">01</div>
+        <h3 data-i18n="p1_h">You respond too slowly</h3>
+        <p data-i18n="p1_p">A lead that waits 2 hours has already booked with someone else. In competitive niches, the first reply wins — every time.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">02</div>
+        <h3 data-i18n="p2_h">Your Google profile is invisible</h3>
+        <p data-i18n="p2_p">Incomplete profiles, no reviews, wrong hours, missing photos. Hundreds of searches per month and you're not in the top 3.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">03</div>
+        <h3 data-i18n="p3_h">WhatsApp is chaos</h3>
+        <p data-i18n="p3_p">No quick replies, no structure, no follow-up after first contact. Leads feel ignored and move on. You never even know they were there.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">04</div>
+        <h3 data-i18n="p4_h">Zero follow-up system</h3>
+        <p data-i18n="p4_p">Most prospects need 4–7 touches before booking. Without a follow-up sequence, you're handing warm leads to whoever follows up.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">05</div>
+        <h3 data-i18n="p5_h">No web presence that converts</h3>
+        <p data-i18n="p5_p">A generic social page or a slow website kills trust instantly. People are judging you in 3 seconds — and most don't like what they see.</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-num">06</div>
+        <h3 data-i18n="p6_h">No lead capture system</h3>
+        <p data-i18n="p6_p">No form, no pipeline, no visibility. You have no idea how many people expressed interest and disappeared — because you never captured them.</p>
+      </div>
+    </div>
+    <div class="problem-truth reveal">
+      <p class="problem-truth-text" data-i18n="prob_truth">The problem isn't that you're not good enough. The problem is that <strong>your systems fail the people who already want to hire you</strong> — and you're completely invisible to <em style="color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5)">thousands who would, if they only knew you existed.</em></p>
+      <a href="#form" class="btn btn-dark btn-lg" style="flex-shrink:0" data-i18n="cta_audit">Get Free Mini Audit</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SOLUTION
+     ============================================================ -->
+<section class="solution">
+  <div class="container">
+    <div class="solution-inner">
+      <div>
+        <div class="eyebrow reveal" data-i18n="sol_eyebrow">The fix</div>
+        <h2 class="h2 reveal" data-i18n="sol_h2">We implement.<br>You <em class="accent">convert more.</em></h2>
+        <p class="lead reveal" data-i18n="sol_sub">No strategy decks. No 6-month roadmaps. We come in, identify the biggest leak, and fix it in weeks — not quarters.</p>
+        <div class="solution-points">
+          <div class="sol-point reveal">
+            <div class="sol-point-bar"></div>
+            <div>
+              <h4 data-i18n="sol1_h">We work on what's already costing you money</h4>
+              <p data-i18n="sol1_p">Before adding complexity, we seal the gaps — response speed, Google setup, WhatsApp structure, and follow-up — everything that's quietly bleeding revenue right now.</p>
+            </div>
+          </div>
+          <div class="sol-point reveal reveal-delay-1">
+            <div class="sol-point-bar"></div>
+            <div>
+              <h4 data-i18n="sol2_h">Built for local service businesses</h4>
+              <p data-i18n="sol2_p">Dentists, clinics, lawyers, real estate agencies, home services. We know your buyers, your margins, and where you lose them.</p>
+            </div>
+          </div>
+          <div class="sol-point reveal reveal-delay-2">
+            <div class="sol-point-bar"></div>
+            <div>
+              <h4 data-i18n="sol3_h">Done for you — fully remote</h4>
+              <p data-i18n="sol3_p">You don't touch the technical parts. We configure, install, and hand it over running. Your team just shows up and answers the leads.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="solution-checklist reveal reveal-delay-2">
+        <h4 data-i18n="sol_what_we_fix">What we actually fix</h4>
+        <div class="check-item">
+          <div class="check-dot">✓</div>
+          <span data-i18n="chk1">Google Business Profile — fully optimized so you rank and get chosen</span>
+        </div>
+        <div class="check-item">
+          <div class="check-dot">✓</div>
+          <span data-i18n="chk2">WhatsApp — quick replies, welcome flow, 24h coverage without extra staff</span>
+        </div>
+        <div class="check-item">
+          <div class="check-dot">✓</div>
+          <span data-i18n="chk3">First-response automation — no lead waits longer than 60 seconds</span>
+        </div>
+        <div class="check-item">
+          <div class="check-dot">✓</div>
+          <span data-i18n="chk4">Follow-up sequences — warm leads stay warm until they book</span>
+        </div>
+        <div class="check-item">
+          <div class="check-dot">✓</div>
+          <span data-i18n="chk5">Lead capture forms — every inquiry captured, qualified, and tracked</span>
+        </div>
+        <div class="check-item">
+          <div class="check-dot">✓</div>
+          <span data-i18n="chk6">Web Express presence — mobile-first, fast, and built to convert</span>
+        </div>
+        <div class="check-item">
+          <div class="check-dot">✓</div>
+          <span data-i18n="chk7">Automation lite — your team handles fewer tasks per lead</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     HOW IT WORKS
+     ============================================================ -->
+<section class="how">
+  <div class="container">
+    <div style="max-width:560px" class="reveal">
+      <div class="eyebrow" data-i18n="how_eyebrow">The process</div>
+      <h2 class="h2" data-i18n="how_h2">Three steps.<br>Live in weeks.</h2>
+      <p class="lead" data-i18n="how_sub">No drawn-out onboarding. No corporate bureaucracy. We move fast because every week costs you.</p>
+    </div>
+    <div class="steps-container">
+      <div class="step-card reveal">
+        <div class="step-num">01</div>
+        <h3 data-i18n="step1_h">We audit your leaks</h3>
+        <p data-i18n="step1_p">We analyze your Google presence, WhatsApp flow, response speed, and lead handling. We map exactly where and why you're losing inquiries.</p>
+        <div class="step-duration" data-i18n="step1_d">48 hours</div>
+      </div>
+      <div class="step-card reveal reveal-delay-1">
+        <div class="step-num">02</div>
+        <h3 data-i18n="step2_h">We fix what's broken</h3>
+        <p data-i18n="step2_p">We implement the highest-impact fixes first. Google profile, WhatsApp structure, response automation, follow-up sequences, and capture forms.</p>
+        <div class="step-duration" data-i18n="step2_d">1–3 weeks</div>
+      </div>
+      <div class="step-card reveal reveal-delay-2">
+        <div class="step-num">03</div>
+        <h3 data-i18n="step3_h">You convert more</h3>
+        <p data-i18n="step3_p">The leaks are sealed. More of your existing demand turns into booked appointments and revenue — without spending more on advertising.</p>
+        <div class="step-duration" data-i18n="step3_d">Ongoing results</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="services">
+  <div class="container">
+    <div style="max-width:540px" class="reveal">
+      <div class="eyebrow" data-i18n="svc_eyebrow">What we offer</div>
+      <h2 class="h2" data-i18n="svc_h2">Four focused fixes.<br><em class="accent">Each one converts.</em></h2>
+      <p class="lead" data-i18n="svc_sub">You don't need all four. You need the right one, done fast. The audit tells us which.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">📍</div>
+        <span class="service-tag" data-i18n="svc1_tag">Visibility</span>
+        <h3 data-i18n="svc1_h">Google Presence &amp; Local SEO</h3>
+        <p data-i18n="svc1_p">We fully optimize your Google Business Profile — photos, categories, reviews strategy, keyword-optimized description, Q&amp;A, and posting cadence — so you rank in the top 3 when your ideal clients search for you.</p>
+        <div class="service-benefit" data-i18n="svc1_b">Show up before your competitors. Get chosen first.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">💬</div>
+        <span class="service-tag" data-i18n="svc2_tag">First Contact</span>
+        <h3 data-i18n="svc2_h">WhatsApp &amp; Instant Response</h3>
+        <p data-i18n="svc2_p">We build your WhatsApp Business system from scratch: automated welcome messages, quick-reply templates, conversation flows, and a response protocol that guarantees no lead waits more than 5 minutes — ever.</p>
+        <div class="service-benefit" data-i18n="svc2_b">Reply in under 5 minutes. Convert 7x more leads.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">🎯</div>
+        <span class="service-tag" data-i18n="svc3_tag">Capture</span>
+        <h3 data-i18n="svc3_h">Lead Capture &amp; Pipeline</h3>
+        <p data-i18n="svc3_p">We design and install your full lead capture system: landing page forms, multi-step qualification flows, CRM setup, and real-time notifications — so every inquiry is logged, scored, and routed to the right person instantly.</p>
+        <div class="service-benefit" data-i18n="svc3_b">Zero leads slip through. Every inquiry tracked.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">🔄</div>
+        <span class="service-tag" data-i18n="svc4_tag">Nurture</span>
+        <h3 data-i18n="svc4_h">Follow-Up &amp; Reactivation</h3>
+        <p data-i18n="svc4_p">We build automated follow-up sequences that re-engage leads who didn't convert the first time — via WhatsApp, email, or SMS — plus reactivation campaigns for your cold database. Most revenue hides here.</p>
+        <div class="service-benefit" data-i18n="svc4_b">Turn cold leads into booked clients — automatically.</div>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">⚙️</div>
+        <span class="service-tag" data-i18n="svc5_tag">Process Automation</span>
+        <h3 data-i18n="svc5_h">Business Automation</h3>
+        <p data-i18n="svc5_p">We automate the repetitive work that drains your team: appointment confirmations, billing reminders, onboarding flows, internal notifications, report generation, and any manual process eating your time — not just lead handling.</p>
+        <div class="service-benefit" data-i18n="svc5_b">Your team does less manual work. Your business runs smoother.</div>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">📣</div>
+        <span class="service-tag" data-i18n="svc6_tag">Growth</span>
+        <h3 data-i18n="svc6_h">Web &amp; Paid Traffic</h3>
+        <p data-i18n="svc6_p">We build your conversion-optimized landing page and manage your Facebook, Instagram, and Google Ads — driving qualified traffic into the same high-converting system we already built for you. Volume meets conversion.</p>
+        <div class="service-benefit" data-i18n="svc6_b">More qualified demand in. More revenue out.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     DIAGNOSTIC FORM
+     ============================================================ -->
+<section class="form-section" id="form">
+  <div class="form-section-inner">
+    <div class="eyebrow reveal">Free mini audit</div>
+    <h2 class="h2 reveal" data-i18n="form_h2">Tell us about your business.<br>We'll show you the gaps.</h2>
+    <p class="lead reveal" data-i18n="form_sub">3 minutes. No pitch. No pressure. You'll receive a specific, honest breakdown of your biggest lead conversion leaks — and what to fix first.</p>
+    <div class="form-card reveal">
+      <div class="form-progress" id="form-progress">
+        <div class="fp-seg active" id="seg-1"></div>
+        <div class="fp-seg" id="seg-2"></div>
+        <div class="fp-seg" id="seg-3"></div>
+        <div class="fp-seg" id="seg-4"></div>
+      </div>
+
+      <!-- Step 1: Contact -->
+      <div class="form-step active" id="fs-1">
+        <span class="step-label" data-i18n="fs1_label">Step 1 of 4</span>
+        <h3 class="step-title" data-i18n="fs1_title">Who are you and where are you?</h3>
+        <div class="fg-row">
+          <div class="fg">
+            <label data-i18n="fl_name">First name *</label>
+            <input type="text" id="f-name" placeholder="Your name">
+          </div>
+          <div class="fg">
+            <label data-i18n="fl_biz">Business name *</label>
+            <input type="text" id="f-biz" placeholder="Your business">
+          </div>
+        </div>
+        <div class="fg">
+          <label data-i18n="fl_country">Country *</label>
+          <select id="f-country">
+            <option value="">— Select —</option>
+            <option>Afghanistan</option>
+            <option>Albania</option>
+            <option>Algeria</option>
+            <option>Andorra</option>
+            <option>Angola</option>
+            <option>Argentina</option>
+            <option>Armenia</option>
+            <option>Australia</option>
+            <option>Austria</option>
+            <option>Azerbaijan</option>
+            <option>Bahamas</option>
+            <option>Bahrain</option>
+            <option>Bangladesh</option>
+            <option>Belarus</option>
+            <option>Belgium</option>
+            <option>Belize</option>
+            <option>Benin</option>
+            <option>Bhutan</option>
+            <option>Bolivia</option>
+            <option>Bosnia and Herzegovina</option>
+            <option>Botswana</option>
+            <option>Brazil</option>
+            <option>Bulgaria</option>
+            <option>Burkina Faso</option>
+            <option>Cambodia</option>
+            <option>Cameroon</option>
+            <option>Canada</option>
+            <option>Chad</option>
+            <option>Chile</option>
+            <option>China</option>
+            <option>Colombia</option>
+            <option>Congo</option>
+            <option>Costa Rica</option>
+            <option>Croatia</option>
+            <option>Cuba</option>
+            <option>Cyprus</option>
+            <option>Czech Republic</option>
+            <option>Denmark</option>
+            <option>Dominican Republic</option>
+            <option>Ecuador</option>
+            <option>Egypt</option>
+            <option>El Salvador</option>
+            <option>Estonia</option>
+            <option>Ethiopia</option>
+            <option>Finland</option>
+            <option>France</option>
+            <option>Georgia</option>
+            <option>Germany</option>
+            <option>Ghana</option>
+            <option>Greece</option>
+            <option>Guatemala</option>
+            <option>Haiti</option>
+            <option>Honduras</option>
+            <option>Hungary</option>
+            <option>India</option>
+            <option>Indonesia</option>
+            <option>Iran</option>
+            <option>Iraq</option>
+            <option>Ireland</option>
+            <option>Israel</option>
+            <option>Italy</option>
+            <option>Jamaica</option>
+            <option>Japan</option>
+            <option>Jordan</option>
+            <option>Kazakhstan</option>
+            <option>Kenya</option>
+            <option>Kosovo</option>
+            <option>Kuwait</option>
+            <option>Kyrgyzstan</option>
+            <option>Latvia</option>
+            <option>Lebanon</option>
+            <option>Libya</option>
+            <option>Lithuania</option>
+            <option>Luxembourg</option>
+            <option>Madagascar</option>
+            <option>Malaysia</option>
+            <option>Mali</option>
+            <option>Malta</option>
+            <option>Mexico</option>
+            <option>Moldova</option>
+            <option>Mongolia</option>
+            <option>Morocco</option>
+            <option>Mozambique</option>
+            <option>Myanmar</option>
+            <option>Nepal</option>
+            <option>Netherlands</option>
+            <option>New Zealand</option>
+            <option>Nicaragua</option>
+            <option>Niger</option>
+            <option>Nigeria</option>
+            <option>North Macedonia</option>
+            <option>Norway</option>
+            <option>Oman</option>
+            <option>Pakistan</option>
+            <option>Palestine</option>
+            <option>Panama</option>
+            <option>Paraguay</option>
+            <option>Peru</option>
+            <option>Philippines</option>
+            <option>Poland</option>
+            <option>Portugal</option>
+            <option>Qatar</option>
+            <option>Romania</option>
+            <option>Russia</option>
+            <option>Rwanda</option>
+            <option>Saudi Arabia</option>
+            <option>Senegal</option>
+            <option>Serbia</option>
+            <option>Singapore</option>
+            <option>Slovakia</option>
+            <option>Slovenia</option>
+            <option>Somalia</option>
+            <option>South Africa</option>
+            <option>South Korea</option>
+            <option>Spain</option>
+            <option>Sri Lanka</option>
+            <option>Sudan</option>
+            <option>Sweden</option>
+            <option>Switzerland</option>
+            <option>Syria</option>
+            <option>Taiwan</option>
+            <option>Tanzania</option>
+            <option>Thailand</option>
+            <option>Tunisia</option>
+            <option>Turkey</option>
+            <option>Uganda</option>
+            <option>Ukraine</option>
+            <option>United Arab Emirates</option>
+            <option>United Kingdom</option>
+            <option>United States</option>
+            <option>Uruguay</option>
+            <option>Uzbekistan</option>
+            <option>Venezuela</option>
+            <option>Vietnam</option>
+            <option>Yemen</option>
+            <option>Zambia</option>
+            <option>Zimbabwe</option>
+          </select>
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label data-i18n="fl_wa">WhatsApp *</label>
+            <input type="tel" id="f-wa" placeholder="+1 555 000 0000">
+          </div>
+          <div class="fg">
+            <label data-i18n="fl_email">Email *</label>
+            <input type="email" id="f-email" placeholder="you@business.com">
+          </div>
+        </div>
+        <div class="form-nav">
+          <span class="step-counter">1 / 4</span>
+          <button class="btn-form-next" onclick="nextFs(1)" data-i18n="btn_next">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Business type -->
+      <div class="form-step" id="fs-2">
+        <span class="step-label" data-i18n="fs2_label">Step 2 of 4</span>
+        <h3 class="step-title" data-i18n="fs2_title">Tell us about your business</h3>
+        <div class="fg">
+          <label data-i18n="fl_niche">Business type *</label>
+          <select id="f-niche" onchange="toggleNicheOther()">
+            <option value="">— Select —</option>
+            <option data-i18n="niche1">Dentist / Dental clinic</option>
+            <option data-i18n="niche2">Aesthetic / Beauty clinic</option>
+            <option data-i18n="niche3">Law firm / Lawyer</option>
+            <option data-i18n="niche4">Real estate agency</option>
+            <option data-i18n="niche5">Home services</option>
+            <option data-i18n="niche6">Medical clinic</option>
+            <option data-i18n="niche7">Other</option>
+          </select>
+        </div>
+        <div class="fg" id="niche-other-wrap" style="display:none">
+          <label data-i18n="fl_niche_other">Please specify your business type</label>
+          <input type="text" id="f-niche-other" placeholder="e.g. E-commerce, SaaS, Coaching...">
+        </div>
+        <div class="fg">
+          <label data-i18n="fl_gbp">Do you have a Google Business Profile?</label>
+          <div class="radio-pills">
+            <div class="rp"><input type="radio" name="gbp" id="gbp-y" value="Yes"><label for="gbp-y" data-i18n="opt_yes">Yes</label></div>
+            <div class="rp"><input type="radio" name="gbp" id="gbp-n" value="No"><label for="gbp-n" data-i18n="opt_no">No</label></div>
+            <div class="rp"><input type="radio" name="gbp" id="gbp-u" value="Not sure"><label for="gbp-u" data-i18n="opt_unsure">Not sure</label></div>
+          </div>
+        </div>
+        <div class="fg">
+          <label data-i18n="fl_wa_rcv">Do you receive leads via WhatsApp?</label>
+          <div class="radio-pills">
+            <div class="rp"><input type="radio" name="wa_rcv" id="wa-y" value="Yes"><label for="wa-y" data-i18n="opt_yes">Yes</label></div>
+            <div class="rp"><input type="radio" name="wa_rcv" id="wa-n" value="No"><label for="wa-n" data-i18n="opt_no">No</label></div>
+          </div>
+        </div>
+        <div class="fg">
+          <label data-i18n="fl_em_rcv">Do you receive leads via email?</label>
+          <div class="radio-pills">
+            <div class="rp"><input type="radio" name="em_rcv" id="em-y" value="Yes"><label for="em-y" data-i18n="opt_yes">Yes</label></div>
+            <div class="rp"><input type="radio" name="em_rcv" id="em-n" value="No"><label for="em-n" data-i18n="opt_no">No</label></div>
+          </div>
+        </div>
+        <div class="form-nav">
+          <button class="btn-back-form" onclick="prevFs(2)">← <span data-i18n="btn_back">Back</span></button>
+          <span class="step-counter">2 / 4</span>
+          <button class="btn-form-next" onclick="nextFs(2)" data-i18n="btn_next">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Goals -->
+      <div class="form-step" id="fs-3">
+        <span class="step-label" data-i18n="fs3_label">Step 3 of 4</span>
+        <h3 class="step-title" data-i18n="fs3_title">What's most urgent for you?</h3>
+        <div class="fg">
+          <label data-i18n="fl_goals">Select all that apply</label>
+          <div class="check-tags">
+            <div class="ct"><input type="checkbox" id="g1" value="Get more clients"><label for="g1" data-i18n="goal1">Get more clients</label></div>
+            <div class="ct"><input type="checkbox" id="g2" value="Respond faster"><label for="g2" data-i18n="goal2">Respond faster</label></div>
+            <div class="ct"><input type="checkbox" id="g3" value="Improve Google presence"><label for="g3" data-i18n="goal3">Improve Google</label></div>
+            <div class="ct"><input type="checkbox" id="g4" value="Automate lead handling"><label for="g4" data-i18n="goal4">Automate leads</label></div>
+            <div class="ct"><input type="checkbox" id="g5" value="Build a website"><label for="g5" data-i18n="goal5">Build a website</label></div>
+            <div class="ct"><input type="checkbox" id="g6" value="Improve follow-up"><label for="g6" data-i18n="goal6">Better follow-up</label></div>
+            <div class="ct"><input type="checkbox" id="g7" value="Other"><label for="g7" data-i18n="goal7">Other</label></div>
+          </div>
+        </div>
+        <div class="fg" id="goal-other-wrap" style="display:none;margin-top:12px">
+          <label data-i18n="fl_goal_other">Please specify</label>
+          <input type="text" id="f-goal-other" placeholder="Describe what you need...">
+        </div>
+        <div class="form-nav">
+          <button class="btn-back-form" onclick="prevFs(3)">← <span data-i18n="btn_back">Back</span></button>
+          <span class="step-counter">3 / 4</span>
+          <button class="btn-form-next" onclick="nextFs(3)" data-i18n="btn_next">Continue →</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Qualification -->
+      <div class="form-step" id="fs-4">
+        <span class="step-label" data-i18n="fs4_label">Step 4 of 4</span>
+        <h3 class="step-title" data-i18n="fs4_title">Help us understand your volume</h3>
+        <div class="fg-row">
+          <div class="fg">
+            <label data-i18n="fl_inq">Weekly inquiries (approx.)</label>
+            <select id="f-inq">
+              <option value="">— Select —</option>
+              <option data-i18n="inq1">Less than 10</option>
+              <option data-i18n="inq2">10 – 30</option>
+              <option data-i18n="inq3">30 – 60</option>
+              <option data-i18n="inq4">60 – 100</option>
+              <option data-i18n="inq5">100 – 200</option>
+              <option data-i18n="inq6">200 – 500</option>
+              <option data-i18n="inq7">More than 500</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label data-i18n="fl_missed">Missed/lost leads per week (approx.)</label>
+            <select id="f-missed">
+              <option value="">— Select —</option>
+              <option data-i18n="miss1">I honestly don't know</option>
+              <option data-i18n="miss2">1 – 5</option>
+              <option data-i18n="miss3">5 – 15</option>
+              <option data-i18n="miss4">15 – 40</option>
+              <option data-i18n="miss5">40 – 100</option>
+              <option data-i18n="miss6">More than 100</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label data-i18n="fl_url">Website URL (optional)</label>
+          <input type="url" id="f-url" placeholder="https://yourbusiness.com">
+        </div>
+        <div class="fg">
+          <label data-i18n="fl_bottleneck">In one sentence — what is your biggest bottleneck right now? *</label>
+          <textarea id="f-bottleneck" rows="3" placeholder="e.g. We get inquiries but nobody follows up and they disappear..."></textarea>
+        </div>
+        <div class="form-nav">
+          <button class="btn-back-form" onclick="prevFs(4)">← <span data-i18n="btn_back">Back</span></button>
+          <span class="step-counter">4 / 4</span>
+          <button class="btn-form-submit" onclick="submitForm()" data-i18n="btn_submit">Get My Free Audit →</button>
+        </div>
+      </div>
+
+      <!-- Success -->
+      <div class="form-success" id="fs-success">
+        <div class="success-check">✓</div>
+        <h3 data-i18n="success_h">Received. Expect a reply within 24 hours.</h3>
+        <p data-i18n="success_p">We'll review your details and send you a specific, actionable breakdown of your biggest conversion leaks — and what to fix first. No fluff.</p>
+        <a href="https://wa.me/595991000000?text=Hi%2C%20I%20just%20submitted%20the%20audit%20form." class="btn btn-wa btn-lg" target="_blank" style="display:inline-flex;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="success_wa">Also talk to us on WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ
+     ============================================================ -->
+<section class="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <div class="eyebrow" style="justify-content:center;display:flex" data-i18n="faq_eyebrow">FAQ</div>
+      <h2 class="h2" data-i18n="faq_h2">Common questions.<br>Honest answers.</h2>
+    </div>
+    <div id="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq1_q">Do I need to give you passwords or admin access?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq1_a">No. For Google Business Profile, WhatsApp setup, and most lead capture work, you don't share passwords. We guide you through the parts that need access via screen share — you stay in full control at every step.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq2_q">Can this be done fully remotely?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq2_a">Yes, 100%. We work with businesses across Brazil, Paraguay, Mexico, the US, and the UK — all remotely via video call and shared screens. Once live, everything runs without us being physically present.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq3_q">How fast will I see results?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq3_a">Most clients have their first fixes live within 1–2 weeks. A full Google + WhatsApp + capture + automation setup typically runs 3–4 weeks from audit to live. We move fast — every extra week is lost revenue for you.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq4_q">Do I need all four services?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq4_a">Not at all. The free mini audit exists exactly to answer that question. Many clients start with one fix — the highest-impact one — and expand from there. You only pay for what you actually need.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq5_q">What happens after I submit the form?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq5_a">We review your submission manually and send you a personalized breakdown — not an automated template. You'll know exactly what your biggest leak is and what we'd recommend fixing first. Then you decide if you want to move forward.</div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-i18n="faq6_q">Is this only for large businesses?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-a" data-i18n="faq6_a">No. We built this for local service businesses — from solo practitioners to mid-sized agencies. If you're getting inquiries and losing some, we can help — regardless of size or volume.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FINAL CTA
+     ============================================================ -->
+<section class="final-cta">
+  <div class="container">
+    <div class="eyebrow reveal" data-i18n="fcta_eyebrow">Last chance to act</div>
+    <h2 class="h2 reveal" data-i18n="fcta_h2">Every week you wait is another week<br>of <em class="accent">revenue that won't come back.</em></h2>
+    <p class="lead reveal" data-i18n="fcta_sub">The audit is free. It takes 3 minutes. And it will show you exactly what's costing you money right now — with no obligation.</p>
+    <div class="final-cta-btns reveal">
+      <a href="#form" class="btn btn-cta btn-lg" data-i18n="cta_audit">Get My Free Mini Audit</a>
+      <a href="https://wa.me/595991000000?text=Hi%2C%20I%20want%20to%20fix%20my%20lead%20leaks." class="btn btn-wa btn-lg" target="_blank">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-i18n="cta_wa">Talk on WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand-name">NexusFlow AI</div>
+      <div class="footer-tagline" data-i18n="footer_tagline">Fewer missed leads. More booked conversations.</div>
+    </div>
+    <div class="footer-links">
+      <a href="#form" data-i18n="nav_audit">Free Audit</a>
+      <a href="https://wa.me/595991000000" target="_blank">WhatsApp</a>
+      <a href="mailto:hello@nexusflow.io">hello@nexusflow.io</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2025 NexusFlow AI. All rights reserved.</span>
+    <span class="footer-admin" onclick="openAdmin()">Admin</span>
+  </div>
+</footer>
+
+<!-- Sticky WA -->
+<a href="https://wa.me/595991000000?text=Hi%2C%20I%20found%20NexusFlow%20and%20want%20to%20talk%20about%20my%20business." class="sticky-wa" target="_blank" title="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- ============================================================
+     ADMIN OVERLAY
+     ============================================================ -->
+<div id="admin-overlay">
+  <div class="admin-box">
+    <div class="admin-top">
+      <h2>Nexus<span>Flow</span> AI — Leads</h2>
+      <button class="admin-close-btn" onclick="closeAdmin()">✕ Close</button>
+    </div>
+    <div class="admin-content">
+      <div class="admin-kpis" id="admin-kpis"></div>
+      <div id="admin-leads-list"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+/* ============================================================
+   i18n
+   ============================================================ */
+const T = {
+  en: {
+    nav_audit: "Free Audit",
+    hero_tag: "Lead Conversion System",
+    hero_h1: "You're losing clients<br><em class='accent'>every single week.</em><br>Without realizing it.",
+    hero_sub: "Every slow reply, weak Google profile, and unanswered WhatsApp message is a client that chose your competitor. We fix that — fast.",
+    stat1: "of leads book with whoever responds first",
+    stat2: "higher conversion when you reply in under 5 minutes",
+    stat3: "of businesses never follow up after first contact",
+    cta_audit: "Get Free Mini Audit",
+    cta_wa: "Talk on WhatsApp",
+    calc_eyebrow: "Revenue leak calculator",
+    calc_h2: "How much are you<br><em class='accent'>actually losing</em> per month?",
+    calc_sub: "Move the sliders to see the real cost of doing nothing. Most businesses are shocked.",
+    calc_title: "Your situation",
+    calc_l1: "Weekly inquiries", calc_l2: "% of leads not replied within 5 minutes",
+    calc_l3: "Average ticket value (USD)", calc_l4: "Your average close rate when you DO respond (%)",
+    calc_result_label: "Estimated monthly revenue leaking",
+    calc_result_sub: "per month in unrealized revenue — from leads who already found you. This multiplies exponentially for everyone who never even discovers you exist.",
+    calc_cta: "Fix This Now — Free Audit",
+    prob_eyebrow: "Where you're bleeding",
+    prob_h2: "The hidden leaks<br>killing your <em class='accent'>conversion</em>",
+    prob_sub: "You don't need more ads. You need to stop leaking the demand you already have.",
+    p1_h: "You respond too slowly", p1_p: "A lead that waits 2 hours has already booked with someone else. In competitive niches, the first reply wins — every time.",
+    p2_h: "Your Google profile is invisible", p2_p: "Incomplete profiles, no reviews, wrong hours, missing photos. Hundreds of searches per month and you're not in the top 3.",
+    p3_h: "WhatsApp is chaos", p3_p: "No quick replies, no structure, no follow-up after first contact. Leads feel ignored and move on.",
+    p4_h: "Zero follow-up system", p4_p: "Most prospects need 4–7 touches before booking. Without a follow-up sequence, warm leads go cold fast.",
+    p5_h: "No web presence that converts", p5_p: "A generic social page or a slow website kills trust instantly. People are judging you in 3 seconds.",
+    p6_h: "No lead capture system", p6_p: "No form, no pipeline, no visibility. You have no idea how many people expressed interest and disappeared.",
+    prob_truth: "The problem isn't that you're not good enough. The problem is that <strong>your systems fail the people who already want to hire you</strong> — and you're completely invisible to <em style=\"color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5)\">thousands who would, if they only knew you existed.</em>",
+    sol_eyebrow: "The fix", sol_h2: "We implement.<br>You <em class='accent'>convert more.</em>",
+    sol_sub: "No strategy decks. No 6-month roadmaps. We come in, identify the biggest leak, and fix it in weeks — not quarters.",
+    sol1_h: "We work on what's already costing you money", sol1_p: "Before adding complexity, we seal the gaps — response speed, Google setup, WhatsApp structure, and follow-up.",
+    sol2_h: "Built for local service businesses", sol2_p: "Dentists, clinics, lawyers, real estate agencies, home services. We know your buyers and where you lose them.",
+    sol3_h: "Done for you — fully remote", sol3_p: "You don't touch the technical parts. We configure, install, and hand it over running.",
+    sol_what_we_fix: "What we actually fix",
+    chk1: "Google Business Profile — fully optimized so you rank and get chosen",
+    chk2: "WhatsApp — quick replies, welcome flow, 24h coverage without extra staff",
+    chk3: "First-response automation — no lead waits longer than 60 seconds",
+    chk4: "Follow-up sequences — warm leads stay warm until they book",
+    chk5: "Lead capture forms — every inquiry captured, qualified, and tracked",
+    chk6: "Web Express presence — mobile-first, fast, and built to convert",
+    chk7: "Automation lite — your team handles fewer tasks per lead",
+    how_eyebrow: "The process", how_h2: "Three steps.<br>Live in weeks.",
+    how_sub: "No drawn-out onboarding. No corporate bureaucracy. We move fast because every week costs you.",
+    step1_h: "We audit your leaks", step1_p: "We analyze your Google presence, WhatsApp flow, response speed, and lead handling. We map exactly where and why you're losing inquiries.", step1_d: "48 hours",
+    step2_h: "We fix what's broken", step2_p: "We implement the highest-impact fixes first. Google profile, WhatsApp structure, response automation, follow-up sequences, and capture forms.", step2_d: "1–3 weeks",
+    step3_h: "You convert more", step3_p: "The leaks are sealed. More of your existing demand turns into booked appointments and revenue — without spending more on advertising.", step3_d: "Ongoing results",
+    svc_eyebrow: "What we offer", svc_h2: "Six targeted solutions.<br><em class='accent'>Each one converts.</em>",
+    svc_sub: "You don't need all six. You need the right one, done fast. The audit tells us which.",
+    svc1_tag: "Foundation", svc1_h: "Google + WhatsApp Setup", svc1_p: "Full optimization of your Google Business Profile plus a structured WhatsApp system with quick replies, welcome messages, and basic automation so you stop missing the easy ones.", svc1_b: "More profile views that actually convert to calls",
+    svc2_tag: "Pipeline", svc2_h: "Lead Capture Sprint", svc2_p: "We build and install a complete lead capture flow — landing page, form, qualification logic, and instant notification system so no inquiry disappears without being captured.", svc2_b: "Every lead captured, qualified, and tracked",
+    svc3_tag: "Automation", svc3_h: "Automation Lite", svc3_p: "Automated first-response, multi-touch follow-up sequences, and basic CRM setup so your business responds in seconds and follows up consistently — without manual work.", svc3_b: "Leads handled 24/7 without extra staff",
+    svc4_tag: "Presence", svc4_h: "Web Express", svc4_p: "A fast, mobile-first landing page built to convert visitors into inquiries in under 3 seconds. Trust signals, social proof, clear offer, and a lead capture form that works.", svc4_b: "Professional presence live in under 2 weeks",
+    svc5_tag: "Full Automation", svc5_h: "Full Automation Suite", svc5_p: "End-to-end automation of your lead pipeline: AI-powered qualification, smart routing, multi-channel follow-up, CRM sync, and reporting dashboards — so your business runs and converts while you sleep.", svc5_b: "Your entire lead pipeline running on autopilot",
+    svc6_tag: "Growth", svc6_h: "Web & Paid Traffic", svc6_p: "We build your conversion-optimized web presence and run your Facebook, Instagram, and Google Ads — so you control the volume of demand coming in, not just how well you handle it.", svc6_b: "More demand in, more revenue out",
+    form_h2: "Tell us about your business.<br>We'll show you the gaps.",
+    form_sub: "3 minutes. No pitch. No pressure. You'll receive a specific, honest breakdown of your biggest lead conversion leaks — and what to fix first.",
+    fs1_label: "Step 1 of 4", fs1_title: "Who are you and where are you?",
+    fl_name: "First name *", fl_biz: "Business name *", fl_country: "Country *", fl_wa: "WhatsApp *", fl_email: "Email *",
+    fs2_label: "Step 2 of 4", fs2_title: "Tell us about your business",
+    fl_niche: "Business type *", fl_gbp: "Do you have a Google Business Profile?", fl_wa_rcv: "Do you receive leads via WhatsApp?", fl_em_rcv: "Do you receive leads via email?",
+    opt_yes: "Yes", opt_no: "No", opt_unsure: "Not sure",
+    niche1: "Dentist / Dental clinic", niche2: "Aesthetic / Beauty clinic", niche3: "Law firm / Lawyer", niche4: "Real estate agency", niche5: "Home services", niche6: "Medical clinic", niche7: "Other",
+    fs3_label: "Step 3 of 4", fs3_title: "What's most urgent for you?",
+    fl_goals: "Select all that apply",
+    goal1: "Get more clients", goal2: "Respond faster", goal3: "Improve Google", goal4: "Automate leads", goal5: "Build a website", goal6: "Better follow-up", goal7: "Other",
+    fs4_label: "Step 4 of 4", fs4_title: "Help us understand your volume",
+    fl_inq: "Weekly inquiries (approx.)", fl_missed: "Missed/lost leads per week (approx.)", fl_url: "Website URL (optional)", fl_bottleneck: "In one sentence — what is your biggest bottleneck right now? *",
+    inq1: "Less than 10", inq2: "10 – 30", inq3: "30 – 60", inq4: "60 – 100", inq5: "100 – 200", inq6: "200 – 500", inq7: "More than 500",
+    miss1: "I honestly don't know", miss2: "1 – 5", miss3: "5 – 15", miss4: "15 – 40", miss5: "40 – 100", miss6: "More than 100",
+    btn_next: "Continue →", btn_back: "Back", btn_submit: "Get My Free Audit →",
+    success_h: "Received. Expect a reply within 24 hours.",
+    success_p: "We'll review your details and send you a specific, actionable breakdown of your biggest conversion leaks — and what to fix first. No fluff.",
+    success_wa: "Also talk to us on WhatsApp",
+    faq_eyebrow: "FAQ", faq_h2: "Common questions.<br>Honest answers.",
+    faq1_q: "Do I need to give you passwords or admin access?", faq1_a: "No. For Google Business Profile, WhatsApp setup, and most lead capture work, you don't share passwords. We guide you through the parts that need access via screen share — you stay in full control at every step.",
+    faq2_q: "Can this be done fully remotely?", faq2_a: "Yes, 100%. We work with businesses worldwide — all remotely via video call and screen sharing. No matter your country or timezone, the full process is done online. Once live, everything runs without us being physically present.",
+    faq3_q: "How fast will I see results?", faq3_a: "Most clients have their first fixes live within 1–2 weeks. A full setup typically runs 3–4 weeks from audit to live. We move fast — every extra week is lost revenue for you.",
+    faq4_q: "Do I need all four services?", faq4_a: "Not at all. The free mini audit exists exactly to answer that question. Many clients start with one fix — the highest-impact one — and expand from there.",
+    faq5_q: "What happens after I submit the form?", faq5_a: "We review your submission manually, checking every detail to give you a genuinely useful response — not an automated template. Because we do this personally, it may take up to 24 hours, but you'll receive a specific breakdown of your biggest leak and a clear recommendation on what to fix first.",
+    faq6_q: "Is this only for large businesses?", faq6_a: "Not at all. We work with businesses of any size, in any industry, anywhere in the world — from solo professionals and clinics to e-commerce brands, SaaS companies, and agencies. If you receive inquiries and lose some before converting them, we can help.",
+    fcta_eyebrow: "Last chance to act",
+    fcta_h2: "Every week you wait is another week<br>of <em class='accent'>revenue that won't come back.</em>",
+    fcta_sub: "The audit is free. It takes 3 minutes. And it will show you exactly what's costing you money right now — with no obligation.",
+    footer_tagline: "Fewer missed leads. More booked conversations."
+  },
+  es: {
+    nav_audit: "Auditoría Gratis",
+    hero_tag: "Sistema de Conversión de Leads",
+    hero_h1: "Estás perdiendo clientes<br><em class='accent'>cada semana.</em><br>Sin darte cuenta.",
+    hero_sub: "Cada respuesta lenta, perfil de Google débil y mensaje de WhatsApp sin respuesta es un cliente que eligió a tu competencia. Lo arreglamos — rápido.",
+    stat1: "de los leads contratan al primero que responde",
+    stat2: "más conversión cuando respondés en menos de 5 minutos",
+    stat3: "de los negocios nunca hace seguimiento tras el primer contacto",
+    cta_audit: "Obtener Auditoría Gratis",
+    cta_wa: "Hablar por WhatsApp",
+    calc_eyebrow: "Calculadora de pérdida de ingresos",
+    calc_h2: "¿Cuánto estás<br><em class='accent'>perdiendo realmente</em> por mes?",
+    calc_sub: "Mové los controles para ver el costo real de no hacer nada. La mayoría de los negocios se sorprenden.",
+    calc_title: "Tu situación",
+    calc_l1: "Consultas por semana", calc_l2: "% de leads sin respuesta en 5 minutos",
+    calc_l3: "Valor promedio del cliente (USD)", calc_l4: "Tu tasa de cierre cuando SÍ respondés (%)",
+    calc_result_label: "Ingresos estimados que se pierden por mes",
+    calc_result_sub: "por mes en ingresos no realizados — de leads que ya te encontraron. Esto se multiplica exponencialmente por todos los que nunca saben que existís.",
+    calc_cta: "Solucioná esto — Auditoría Gratis",
+    prob_eyebrow: "Dónde estás sangrando",
+    prob_h2: "Las fugas ocultas que están<br>matando tu <em class='accent'>conversión</em>",
+    prob_sub: "No necesitás más publicidad. Necesitás dejar de perder la demanda que ya tenés.",
+    p1_h: "Respondés demasiado lento", p1_p: "Un lead que espera 2 horas ya reservó con otro. En nichos competitivos, el primero en responder gana — siempre.",
+    p2_h: "Tu perfil de Google es invisible", p2_p: "Perfiles incompletos, sin reseñas, horarios incorrectos. Cientos de búsquedas por mes y no estás en los 3 primeros.",
+    p3_h: "WhatsApp es un caos", p3_p: "Sin respuestas rápidas, sin estructura, sin seguimiento. Los leads se sienten ignorados y se van.",
+    p4_h: "Sin sistema de seguimiento", p4_p: "La mayoría necesita 4–7 contactos antes de reservar. Sin secuencia de seguimiento, los leads tibios se enfrían.",
+    p5_h: "Sin presencia web que convierta", p5_p: "Una página genérica o sitio lento destruye la confianza al instante. Te juzgan en 3 segundos.",
+    p6_h: "Sin sistema de captura de leads", p6_p: "Sin formulario, sin pipeline, sin visibilidad. No sabés cuántos mostraron interés y desaparecieron.",
+    prob_truth: "El problema no es que no seas suficientemente bueno. El problema es que <strong>tus sistemas fallan a las personas que ya quieren contratarte</strong> — y sos completamente invisible para <em style=\"color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5)\">miles que lo harían, si tan solo supieran que existís.</em>",
+    sol_eyebrow: "La solución", sol_h2: "Nosotros implementamos.<br>Vos <em class='accent'>convertís más.</em>",
+    sol_sub: "Sin presentaciones. Sin roadmaps de 6 meses. Entramos, identificamos la fuga más grande y la arreglamos en semanas.",
+    sol1_h: "Trabajamos en lo que ya te está costando dinero", sol1_p: "Antes de agregar complejidad, sellamos las brechas: velocidad de respuesta, Google, estructura de WhatsApp y seguimiento.",
+    sol2_h: "Construido para negocios de servicios locales", sol2_p: "Dentistas, clínicas, abogados, inmobiliarias, servicios del hogar. Conocemos tus compradores y dónde los perdés.",
+    sol3_h: "Hecho para vos — 100% remoto", sol3_p: "No tocás las partes técnicas. Configuramos, instalamos y te lo entregamos funcionando.",
+    sol_what_we_fix: "Qué arreglamos realmente",
+    chk1: "Perfil de Google Business — optimizado para que aparezcas y te elijan",
+    chk2: "WhatsApp — respuestas rápidas, flujo de bienvenida, cobertura 24h sin personal extra",
+    chk3: "Automatización de primera respuesta — ningún lead espera más de 60 segundos",
+    chk4: "Secuencias de seguimiento — los leads tibios se mantienen tibios hasta que reservan",
+    chk5: "Formularios de captura — cada consulta capturada, calificada y rastreada",
+    chk6: "Presencia Web Express — mobile-first, rápida y construida para convertir",
+    chk7: "Automatización lite — tu equipo maneja menos tareas por lead",
+    how_eyebrow: "El proceso", how_h2: "Tres pasos.<br>En vivo en semanas.",
+    how_sub: "Sin onboarding largo. Sin burocracia. Nos movemos rápido porque cada semana te cuesta.",
+    step1_h: "Auditamos tus fugas", step1_p: "Analizamos tu presencia en Google, flujo de WhatsApp, velocidad de respuesta y manejo de leads. Mapeamos dónde y por qué perdés consultas.", step1_d: "48 horas",
+    step2_h: "Arreglamos lo que está roto", step2_p: "Implementamos las correcciones de mayor impacto primero. Perfil de Google, estructura de WhatsApp, automatización de respuesta y formularios.", step2_d: "1–3 semanas",
+    step3_h: "Convertís más", step3_p: "Las fugas están selladas. Más de tu demanda existente se convierte en citas y facturación sin gastar más en publicidad.", step3_d: "Resultados continuos",
+    svc_eyebrow: "Qué ofrecemos", svc_h2: "Seis soluciones concretas.<br><em class='accent'>Cada una convierte.</em>",
+    svc_sub: "No necesitás las seis. Necesitás la correcta, hecha rápido. La auditoría nos dice cuál.",
+    svc1_tag: "Fundación", svc1_h: "Configuración Google + WhatsApp", svc1_p: "Optimización completa de tu Perfil de Google Business más un sistema de WhatsApp estructurado con respuestas rápidas, mensajes de bienvenida y automatización básica.", svc1_b: "Más vistas de perfil que se convierten en llamadas",
+    svc2_tag: "Pipeline", svc2_h: "Sprint de Captura de Leads", svc2_p: "Construimos e instalamos un flujo completo de captura de leads — landing page, formulario, lógica de calificación y sistema de notificación instantánea.", svc2_b: "Cada lead capturado, calificado y rastreado",
+    svc3_tag: "Automatización", svc3_h: "Automatización Lite", svc3_p: "Primera respuesta automatizada, secuencias de seguimiento y configuración básica de CRM para que tu negocio responda en segundos y haga seguimiento consistente.", svc3_b: "Leads atendidos 24/7 sin personal extra",
+    svc4_tag: "Presencia", svc4_h: "Web Express", svc4_p: "Una landing page rápida y mobile-first construida para convertir visitantes en consultas en menos de 3 segundos. Señales de confianza, oferta clara y formulario que funciona.", svc4_b: "Presencia profesional en menos de 2 semanas",
+    svc5_tag: "Automatización Total", svc5_h: "Suite de Automatización Completa", svc5_p: "Automatización end-to-end de tu pipeline de leads: calificación con IA, enrutamiento inteligente, seguimiento multicanal, sincronización con CRM y dashboards de reportes — para que tu negocio funcione y convierta mientras dormís.", svc5_b: "Todo tu pipeline de leads en piloto automático",
+    svc6_tag: "Crecimiento", svc6_h: "Web y Tráfico Pago", svc6_p: "Construimos tu presencia web optimizada para convertir y gestionamos tus anuncios de Facebook, Instagram y Google — para que controles el volumen de demanda que entra, no solo qué tan bien la manejás.", svc6_b: "Más demanda entrando, más ingresos saliendo",
+    form_h2: "Contanos sobre tu negocio.<br>Te mostramos las fugas.",
+    form_sub: "3 minutos. Sin pitch. Sin presión. Recibirás un análisis específico y honesto de tus principales fugas de conversión — y qué corregir primero.",
+    fs1_label: "Paso 1 de 4", fs1_title: "¿Quién sos y dónde estás?",
+    fl_name: "Nombre *", fl_biz: "Nombre del negocio *", fl_country: "País *", fl_wa: "WhatsApp *", fl_email: "Email *",
+    fs2_label: "Paso 2 de 4", fs2_title: "Contanos sobre tu negocio",
+    fl_niche: "Tipo de negocio *", fl_gbp: "¿Tenés un Perfil de Google Business?", fl_wa_rcv: "¿Recibís leads por WhatsApp?", fl_em_rcv: "¿Recibís leads por email?",
+    opt_yes: "Sí", opt_no: "No", opt_unsure: "No estoy seguro/a",
+    niche1: "Dentista / Clínica dental", niche2: "Clínica estética / Belleza", niche3: "Estudio jurídico / Abogado", niche4: "Inmobiliaria", niche5: "Servicios del hogar", niche6: "Clínica médica", niche7: "Otro",
+    fs3_label: "Paso 3 de 4", fs3_title: "¿Qué es más urgente para vos?",
+    fl_goals: "Seleccioná todos los que apliquen",
+    goal1: "Conseguir más clientes", goal2: "Responder más rápido", goal3: "Mejorar Google", goal4: "Automatizar leads", goal5: "Crear sitio web", goal6: "Mejorar seguimiento", goal7: "Otro",
+    fs4_label: "Paso 4 de 4", fs4_title: "Ayudanos a entender tu volumen",
+    fl_inq: "Consultas por semana (aprox.)", fl_missed: "Leads perdidos por semana (aprox.)", fl_url: "URL de tu sitio web (opcional)", fl_bottleneck: "En una oración — ¿cuál es tu mayor cuello de botella ahora mismo? *",
+    inq1: "Menos de 10", inq2: "10 – 30", inq3: "30 – 60", inq4: "60 – 100", inq5: "100 – 200", inq6: "200 – 500", inq7: "Más de 500",
+    miss1: "Honestamente no lo sé", miss2: "1 – 5", miss3: "5 – 15", miss4: "15 – 40", miss5: "40 – 100", miss6: "Más de 100",
+    btn_next: "Continuar →", btn_back: "Atrás", btn_submit: "Obtener Mi Auditoría Gratis →",
+    success_h: "Recibido. Esperá una respuesta en 24 horas.",
+    success_p: "Revisaremos tu información y te enviaremos un análisis específico y accionable de tus principales fugas de conversión — qué arreglar primero. Sin relleno.",
+    success_wa: "También hablá con nosotros por WhatsApp",
+    faq_eyebrow: "Preguntas Frecuentes", faq_h2: "Preguntas comunes.<br>Respuestas honestas.",
+    faq1_q: "¿Necesito darles mis contraseñas o acceso de administrador?", faq1_a: "No. Para el Perfil de Google Business, la configuración de WhatsApp y la mayoría del trabajo de captura de leads, no compartís contraseñas. Te guiamos por las partes que requieren acceso via pantalla compartida — vos mantenés el control total.",
+    faq2_q: "¿Puede hacerse completamente de forma remota?", faq2_a: "Sí, 100%. Trabajamos con negocios en cualquier parte del mundo — todo de forma remota vía videollamada y pantalla compartida. Sin importar el país ni la zona horaria, el proceso completo se hace online.",
+    faq3_q: "¿Qué tan rápido veré resultados?", faq3_a: "La mayoría de los clientes tienen sus primeras correcciones en vivo en 1–2 semanas. Una configuración completa generalmente toma 3–4 semanas desde la auditoría hasta en vivo.",
+    faq4_q: "¿Necesito los cuatro servicios?", faq4_a: "Para nada. La auditoría gratuita existe exactamente para responder esa pregunta. Muchos clientes empiezan con una corrección — la de mayor impacto — y expanden desde ahí.",
+    faq5_q: "¿Qué pasa después de enviar el formulario?", faq5_a: "Revisamos tu envío manualmente, verificando cada detalle para darte una respuesta genuinamente útil — no una plantilla automatizada. Como lo hacemos de manera personalizada, puede demorar hasta 24 horas, pero recibirás un análisis específico de tu mayor fuga y una recomendación clara sobre qué corregir primero.",
+    faq6_q: "¿Esto es solo para grandes empresas?", faq6_a: "Para nada. Trabajamos con negocios de cualquier tamaño, en cualquier industria y en cualquier parte del mundo — desde profesionales independientes y clínicas hasta marcas de e-commerce, empresas SaaS y agencias. Si recibís consultas y perdés algunas antes de convertirlas, podemos ayudarte.",
+    fcta_eyebrow: "Última oportunidad de actuar",
+    fcta_h2: "Cada semana que esperás es otra semana<br>de <em class='accent'>ingresos que no van a volver.</em>",
+    fcta_sub: "La auditoría es gratis. Tarda 3 minutos. Y te mostrará exactamente qué te está costando dinero ahora mismo — sin obligación.",
+    footer_tagline: "Menos leads perdidos. Más conversaciones reservadas."
+  },
+  pt: {
+    nav_audit: "Auditoria Grátis",
+    hero_tag: "Sistema de Conversão de Leads",
+    hero_h1: "Você está perdendo clientes<br><em class='accent'>toda semana.</em><br>Sem perceber.",
+    hero_sub: "Cada resposta lenta, perfil fraco no Google e mensagem de WhatsApp sem resposta é um cliente que escolheu o seu concorrente. Nós resolvemos isso — rápido.",
+    stat1: "dos leads contratam quem responde primeiro",
+    stat2: "mais conversão quando você responde em menos de 5 minutos",
+    stat3: "das empresas nunca fazem acompanhamento após o primeiro contato",
+    cta_audit: "Obter Auditoria Grátis",
+    cta_wa: "Falar no WhatsApp",
+    calc_eyebrow: "Calculadora de receita perdida",
+    calc_h2: "Quanto você está<br><em class='accent'>realmente perdendo</em> por mês?",
+    calc_sub: "Mova os controles para ver o custo real de não fazer nada. A maioria das empresas fica chocada.",
+    calc_title: "Sua situação",
+    calc_l1: "Consultas por semana", calc_l2: "% de leads sem resposta em 5 minutos",
+    calc_l3: "Valor médio do cliente (USD)", calc_l4: "Sua taxa de fechamento quando VOCÊ responde (%)",
+    calc_result_label: "Receita mensal estimada que está vazando",
+    calc_result_sub: "por mês em receita não realizada — de leads que já te encontraram. Isso se multiplica exponencialmente pelos que nunca descobrem que você existe.",
+    calc_cta: "Resolva Isso Agora — Auditoria Grátis",
+    prob_eyebrow: "Onde você está sangrando",
+    prob_h2: "Os vazamentos ocultos<br>matando a sua <em class='accent'>conversão</em>",
+    prob_sub: "Você não precisa de mais anúncios. Você precisa parar de desperdiçar a demanda que já tem.",
+    p1_h: "Você responde devagar demais", p1_p: "Um lead que espera 2 horas já agendou com outro. Em nichos competitivos, quem responde primeiro vence — sempre.",
+    p2_h: "Seu perfil no Google é invisível", p2_p: "Perfis incompletos, sem avaliações, horários errados. Centenas de buscas por mês e você não aparece nos 3 primeiros.",
+    p3_h: "WhatsApp é um caos", p3_p: "Sem respostas rápidas, sem estrutura, sem acompanhamento. Os leads se sentem ignorados e vão embora.",
+    p4_h: "Zero sistema de acompanhamento", p4_p: "A maioria precisa de 4–7 contatos antes de contratar. Sem sequência de follow-up, leads mornos esfriamrapido.",
+    p5_h: "Sem presença web que converte", p5_p: "Uma página genérica ou site lento destrói a confiança na hora. As pessoas te julgam em 3 segundos.",
+    p6_h: "Sem sistema de captura de leads", p6_p: "Sem formulário, sem pipeline, sem visibilidade. Você não sabe quantas pessoas demonstraram interesse e sumiram.",
+    prob_truth: "O problema não é que você não seja bom o suficiente. O problema é que <strong>seus sistemas falham com as pessoas que já querem te contratar</strong> — e você é completamente invisível para <em style=\"color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5)\">milhares que contratariam, se soubessem que você existe.</em>",
+    sol_eyebrow: "A solução", sol_h2: "Nós implementamos.<br>Você <em class='accent'>converte mais.</em>",
+    sol_sub: "Sem apresentações. Sem roadmaps de 6 meses. Entramos, identificamos o maior vazamento e corrigimos em semanas.",
+    sol1_h: "Trabalhamos no que já está te custando dinheiro", sol1_p: "Antes de adicionar complexidade, selamos as brechas: velocidade de resposta, Google, estrutura de WhatsApp e follow-up.",
+    sol2_h: "Feito para empresas de serviços locais", sol2_p: "Dentistas, clínicas, advogados, imobiliárias, serviços domésticos. Conhecemos seus compradores e onde você os perde.",
+    sol3_h: "Feito para você — 100% remoto", sol3_p: "Você não toca nas partes técnicas. Configuramos, instalamos e entregamos funcionando.",
+    sol_what_we_fix: "O que realmente corrigimos",
+    chk1: "Perfil do Google Business — totalmente otimizado para você aparecer e ser escolhido",
+    chk2: "WhatsApp — respostas rápidas, fluxo de boas-vindas, cobertura 24h sem funcionários extras",
+    chk3: "Automação de primeira resposta — nenhum lead espera mais de 60 segundos",
+    chk4: "Sequências de follow-up — leads mornos ficam mornos até agendarem",
+    chk5: "Formulários de captura — cada consulta capturada, qualificada e rastreada",
+    chk6: "Presença Web Express — mobile-first, rápida e construída para converter",
+    chk7: "Automação lite — sua equipe lida com menos tarefas por lead",
+    how_eyebrow: "O processo", how_h2: "Três passos.<br>No ar em semanas.",
+    how_sub: "Sem onboarding longo. Sem burocracia. Nos movemos rápido porque cada semana tem um custo.",
+    step1_h: "Auditamos seus vazamentos", step1_p: "Analisamos sua presença no Google, fluxo de WhatsApp, velocidade de resposta e gestão de leads. Mapeamos exatamente onde e por que você perde consultas.", step1_d: "48 horas",
+    step2_h: "Corrigimos o que está quebrado", step2_p: "Implementamos as correções de maior impacto primeiro. Perfil Google, estrutura WhatsApp, automação de resposta, sequências de follow-up e formulários.", step2_d: "1–3 semanas",
+    step3_h: "Você converte mais", step3_p: "Os vazamentos estão selados. Mais da sua demanda existente se transforma em agendamentos e receita sem gastar mais em publicidade.", step3_d: "Resultados contínuos",
+    svc_eyebrow: "O que oferecemos", svc_h2: "Seis soluções concretas.<br><em class='accent'>Cada uma converte.</em>",
+    svc_sub: "Você não precisa das seis. Você precisa da certa, feita rápido. A auditoria nos diz qual.",
+    svc1_tag: "Fundação", svc1_h: "Configuração Google + WhatsApp", svc1_p: "Otimização completa do seu Perfil do Google Business mais um sistema de WhatsApp estruturado com respostas rápidas, mensagens de boas-vindas e automação básica.", svc1_b: "Mais visualizações de perfil que se convertem em ligações",
+    svc2_tag: "Pipeline", svc2_h: "Sprint de Captura de Leads", svc2_p: "Construímos e instalamos um fluxo completo de captura de leads — landing page, formulário, lógica de qualificação e sistema de notificação instantânea.", svc2_b: "Cada lead capturado, qualificado e rastreado",
+    svc3_tag: "Automação", svc3_h: "Automação Lite", svc3_p: "Primeira resposta automatizada, sequências de follow-up multitoque e configuração básica de CRM para que sua empresa responda em segundos e faça follow-up consistente.", svc3_b: "Leads atendidos 24/7 sem funcionários extras",
+    svc4_tag: "Presença", svc4_h: "Web Express", svc4_p: "Uma landing page rápida e mobile-first construída para converter visitantes em consultas em menos de 3 segundos. Sinais de confiança, oferta clara e formulário que funciona.", svc4_b: "Presença profissional no ar em menos de 2 semanas",
+    svc5_tag: "Automação Total", svc5_h: "Suite de Automação Completa", svc5_p: "Automação end-to-end do seu pipeline de leads: qualificação com IA, roteamento inteligente, follow-up multicanal, sincronização com CRM e dashboards de relatórios — para que seu negócio funcione e converta enquanto você dorme.", svc5_b: "Todo o seu pipeline de leads no piloto automático",
+    svc6_tag: "Crescimento", svc6_h: "Web e Tráfego Pago", svc6_p: "Construímos sua presença web otimizada para converter e gerenciamos seus anúncios do Facebook, Instagram e Google — para que você controle o volume de demanda que entra, não apenas quão bem você a trata.", svc6_b: "Mais demanda, mais receita",
+    form_h2: "Conte-nos sobre seu negócio.<br>Mostraremos os vazamentos.",
+    form_sub: "3 minutos. Sem pitch. Sem pressão. Você receberá uma análise específica e honesta dos seus maiores vazamentos de conversão — e o que corrigir primeiro.",
+    fs1_label: "Passo 1 de 4", fs1_title: "Quem é você e onde está?",
+    fl_name: "Nome *", fl_biz: "Nome do negócio *", fl_country: "País *", fl_wa: "WhatsApp *", fl_email: "Email *",
+    fs2_label: "Passo 2 de 4", fs2_title: "Conte-nos sobre seu negócio",
+    fl_niche: "Tipo de negócio *", fl_gbp: "Você tem um Perfil do Google Business?", fl_wa_rcv: "Você recebe leads pelo WhatsApp?", fl_em_rcv: "Você recebe leads por email?",
+    opt_yes: "Sim", opt_no: "Não", opt_unsure: "Não tenho certeza",
+    niche1: "Dentista / Clínica dental", niche2: "Clínica estética / Beleza", niche3: "Escritório de advocacia / Advogado", niche4: "Imobiliária", niche5: "Serviços domésticos", niche6: "Clínica médica", niche7: "Outro",
+    fs3_label: "Passo 3 de 4", fs3_title: "O que é mais urgente para você?",
+    fl_goals: "Selecione todos que se aplicam",
+    goal1: "Conseguir mais clientes", goal2: "Responder mais rápido", goal3: "Melhorar Google", goal4: "Automatizar leads", goal5: "Criar site", goal6: "Melhorar follow-up", goal7: "Outro",
+    fs4_label: "Passo 4 de 4", fs4_title: "Ajude-nos a entender seu volume",
+    fl_inq: "Consultas por semana (aprox.)", fl_missed: "Leads perdidos por semana (aprox.)", fl_url: "URL do seu site (opcional)", fl_bottleneck: "Em uma frase — qual é seu maior gargalo agora? *",
+    inq1: "Menos de 10", inq2: "10 – 30", inq3: "30 – 60", inq4: "60 – 100", inq5: "100 – 200", inq6: "200 – 500", inq7: "Mais de 500",
+    miss1: "Honestamente não sei", miss2: "1 – 5", miss3: "5 – 15", miss4: "15 – 40", miss5: "40 – 100", miss6: "Mais de 100",
+    btn_next: "Continuar →", btn_back: "Voltar", btn_submit: "Obter Minha Auditoria Grátis →",
+    success_h: "Recebido. Espere uma resposta em 24 horas.",
+    success_p: "Revisaremos seus dados e enviaremos uma análise específica e acionável dos seus maiores vazamentos de conversão — e o que corrigir primeiro.",
+    success_wa: "Também fale conosco no WhatsApp",
+    faq_eyebrow: "Perguntas Frequentes", faq_h2: "Perguntas comuns.<br>Respostas honestas.",
+    faq1_q: "Preciso dar minha senha ou acesso de administrador?", faq1_a: "Não. Para Perfil do Google Business, configuração de WhatsApp e a maioria do trabalho de captura de leads, você não compartilha senhas. Guiamos você pelas partes que precisam de acesso via compartilhamento de tela.",
+    faq2_q: "Pode ser feito totalmente de forma remota?", faq2_a: "Sim, 100%. Trabalhamos com empresas em qualquer lugar do mundo — tudo remotamente via videochamada e compartilhamento de tela. Independente do país ou fuso horário, todo o processo é feito online.",
+    faq3_q: "Quão rápido verei resultados?", faq3_a: "A maioria dos clientes tem suas primeiras correções no ar em 1–2 semanas. Uma configuração completa geralmente leva 3–4 semanas do audit até entrar no ar.",
+    faq4_q: "Preciso de todos os quatro serviços?", faq4_a: "De jeito nenhum. A auditoria gratuita existe exatamente para responder essa pergunta. Muitos clientes começam com uma correção — a de maior impacto — e expandem a partir daí.",
+    faq5_q: "O que acontece depois que envio o formulário?", faq5_a: "Revisamos seu envio manualmente, verificando cada detalhe para te dar uma resposta genuinamente útil — não um modelo automatizado. Como fazemos isso de forma personalizada, pode levar até 24 horas, mas você receberá uma análise específica do seu maior vazamento e uma recomendação clara do que corrigir primeiro.",
+    faq6_q: "Isso é apenas para grandes empresas?", faq6_a: "De jeito nenhum. Trabalhamos com empresas de qualquer porte, em qualquer setor e em qualquer lugar do mundo — de profissionais autônomos e clínicas até marcas de e-commerce, empresas SaaS e agências. Se você recebe consultas e perde algumas antes de convertê-las, podemos ajudar.",
+    fcta_eyebrow: "Última chance de agir",
+    fcta_h2: "Cada semana que você espera é mais uma semana<br>de <em class='accent'>receita que não vai voltar.</em>",
+    fcta_sub: "A auditoria é grátis. Leva 3 minutos. E mostrará exatamente o que está custando dinheiro agora — sem obrigação.",
+    footer_tagline: "Menos leads perdidos. Mais conversas agendadas."
+  }
+};
+
+let lang = 'en';
+function setLang(l) {
+  lang = l;
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.lang-btn[onclick="setLang('${l}')"]`).classList.add('active');
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (T[l][key] !== undefined) el.innerHTML = T[l][key];
+  });
+  document.documentElement.lang = l === 'pt' ? 'pt-BR' : l;
+}
+
+/* ============================================================
+   LOSS CALCULATOR
+   ============================================================ */
+function calcLoss() {
+  const inq = parseInt(document.getElementById('r-inq').value);
+  const miss5 = parseInt(document.getElementById('r-miss').value); // % not replied in 5min
+  const val = parseInt(document.getElementById('r-val').value);
+  const conv = parseInt(document.getElementById('r-conv').value);
+  document.getElementById('v-inq').textContent = inq;
+  document.getElementById('v-miss').textContent = miss5 + '%';
+  document.getElementById('v-val').textContent = '$' + val;
+  document.getElementById('v-conv').textContent = conv + '%';
+  // Leads not answered in 5min → 7x lower conversion (based on Harvard study)
+  // Fast-reply conv rate = conv%; slow-reply ≈ conv/7 (7x multiplier)
+  const fast_leads = inq * ((100 - miss5) / 100);
+  const slow_leads = inq * (miss5 / 100);
+  const fast_revenue = fast_leads * (conv / 100) * val;
+  const slow_revenue = slow_leads * ((conv / 7) / 100) * val;
+  const potential_monthly = (fast_leads + slow_leads) * (conv / 100) * val * 4.3;
+  const actual_monthly = (fast_revenue + slow_revenue) * 4.3;
+  const leaked = Math.round(potential_monthly - actual_monthly);
+  document.getElementById('calc-out').textContent = '$' + leaked.toLocaleString();
+}
+
+/* ============================================================
+   MULTI-STEP FORM
+   ============================================================ */
+let step = 1;
+function updateProgress(s) {
+  for (let i = 1; i <= 4; i++) {
+    const seg = document.getElementById('seg-' + i);
+    if (i < s) seg.className = 'fp-seg done';
+    else if (i === s) seg.className = 'fp-seg active';
+    else seg.className = 'fp-seg';
+  }
+}
+function nextFs(from) {
+  if (from === 1) {
+    if (!document.getElementById('f-name').value.trim() ||
+        !document.getElementById('f-biz').value.trim() ||
+        !document.getElementById('f-country').value ||
+        !document.getElementById('f-wa').value.trim() ||
+        !document.getElementById('f-email').value.trim()) {
+      alert(lang === 'es' ? 'Por favor completá todos los campos requeridos.' :
+            lang === 'pt' ? 'Por favor preencha todos os campos obrigatórios.' :
+            'Please fill in all required fields.'); return;
+    }
+  }
+  if (from === 2 && !document.getElementById('f-niche').value) {
+    alert(lang === 'es' ? 'Por favor seleccioná tu tipo de negocio.' :
+          lang === 'pt' ? 'Por favor selecione o tipo de negócio.' :
+          'Please select your business type.'); return;
+  }
+  document.getElementById('fs-' + from).classList.remove('active');
+  step = from + 1;
+  document.getElementById('fs-' + step).classList.add('active');
+  updateProgress(step);
+  document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function prevFs(from) {
+  document.getElementById('fs-' + from).classList.remove('active');
+  step = from - 1;
+  document.getElementById('fs-' + step).classList.add('active');
+  updateProgress(step);
+}
+function getChecked() {
+  return Array.from(document.querySelectorAll('.ct input:checked')).map(e => e.value).join(', ');
+}
+function getRadio(name) {
+  const el = document.querySelector('input[name="' + name + '"]:checked');
+  return el ? el.value : '—';
+}
+function submitForm() {
+  const bottleneck = document.getElementById('f-bottleneck').value.trim();
+  if (!bottleneck) {
+    alert(lang === 'es' ? 'Por favor describí tu cuello de botella principal.' :
+          lang === 'pt' ? 'Por favor descreva seu principal gargalo.' :
+          'Please describe your biggest bottleneck.'); return;
+  }
+  const entry = {
+    id: Date.now(),
+    lang,
+    date: new Date().toLocaleString(),
+    name: document.getElementById('f-name').value.trim(),
+    biz: document.getElementById('f-biz').value.trim(),
+    country: document.getElementById('f-country').value,
+    wa: document.getElementById('f-wa').value.trim(),
+    email: document.getElementById('f-email').value.trim(),
+    niche: document.getElementById('f-niche').value === 'Other' || document.getElementById('f-niche').value === 'Otro' || document.getElementById('f-niche').value === 'Outro' ? (document.getElementById('f-niche').value + ': ' + document.getElementById('f-niche-other').value) : document.getElementById('f-niche').value,
+    gbp: getRadio('gbp'),
+    wa_rcv: getRadio('wa_rcv'),
+    em_rcv: getRadio('em_rcv'),
+    goals: getChecked() + (document.getElementById('g7').checked && document.getElementById('f-goal-other').value ? ' — ' + document.getElementById('f-goal-other').value : ''),
+    inq: document.getElementById('f-inq').value,
+    missed: document.getElementById('f-missed').value,
+    url: document.getElementById('f-url').value.trim(),
+    bottleneck
+  };
+  // Save locally
+  const leads = JSON.parse(localStorage.getItem('nf_v2_leads') || '[]');
+  leads.unshift(entry);
+  localStorage.setItem('nf_v2_leads', JSON.stringify(leads));
+
+  // Show success state FIRST — always, no matter what
+  for (let i = 1; i <= 4; i++) document.getElementById('fs-' + i).classList.remove('active');
+  document.getElementById('fs-success').style.display = 'block';
+  document.getElementById('form-progress').style.display = 'none';
+  document.getElementById('form').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  // Send via Netlify Forms (non-blocking)
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      'form-name':       'auditoria',
+      nombre:            entry.name,
+      negocio:           entry.biz,
+      pais:              entry.country,
+      whatsapp:          entry.wa,
+      email:             entry.email,
+      tipo_negocio:      entry.niche,
+      google_profile:    entry.gbp,
+      recibe_wa:         entry.wa_rcv,
+      recibe_email:      entry.em_rcv,
+      objetivos:         entry.goals,
+      consultas_semana:  entry.inq,
+      leads_perdidos:    entry.missed,
+      sitio_web:         entry.url,
+      cuello_botella:    entry.bottleneck,
+      idioma:            entry.lang,
+      fecha:             entry.date
+    }).toString()
+  }).then(() => {
+    console.log('Formulario enviado a Netlify OK');
+  }).catch(err => {
+    console.warn('Netlify form error:', err);
+  });
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+/* ============================================================
+   ADMIN
+   ============================================================ */
+function openAdmin() {
+  renderAdmin();
+  document.getElementById('admin-overlay').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeAdmin() {
+  document.getElementById('admin-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+function renderAdmin() {
+  const leads = JSON.parse(localStorage.getItem('nf_v2_leads') || '[]');
+  const kpis = document.getElementById('admin-kpis');
+  const list = document.getElementById('admin-leads-list');
+  const countries = new Set(leads.map(l => l.country)).size;
+  const thisWeek = leads.filter(l => Date.now() - l.id < 7 * 86400000).length;
+  kpis.innerHTML = `
+    <div class="admin-kpi"><div class="admin-kpi-num">${leads.length}</div><div class="admin-kpi-label">Total Leads</div></div>
+    <div class="admin-kpi"><div class="admin-kpi-num">${countries}</div><div class="admin-kpi-label">Countries</div></div>
+    <div class="admin-kpi"><div class="admin-kpi-num">${thisWeek}</div><div class="admin-kpi-label">This Week</div></div>
+  `;
+  if (!leads.length) {
+    list.innerHTML = '<div class="admin-empty">No submissions yet.</div>'; return;
+  }
+  list.innerHTML = leads.map((l, i) => `
+    <div class="lead-row">
+      <div class="lead-row-header" onclick="toggleLeadDetail(${i})">
+        <div>
+          <div class="lead-row-name">${l.name} — ${l.biz}${i === 0 ? '<span class="new-badge">NEW</span>' : ''}</div>
+          <div class="lead-row-meta">${l.niche} · ${l.country} · ${l.email} · <span style="text-transform:uppercase;color:var(--accent)">${l.lang || 'en'}</span></div>
+        </div>
+        <div class="lead-row-date">${l.date}</div>
+      </div>
+      <div class="lead-row-body" id="ld-${i}">
+        <div class="lead-fields">
+          <div class="lead-field-item"><div class="lfi-label">WhatsApp</div><div class="lfi-val">${l.wa}</div></div>
+          <div class="lead-field-item"><div class="lfi-label">Google Profile</div><div class="lfi-val">${l.gbp}</div></div>
+          <div class="lead-field-item"><div class="lfi-label">WA Leads</div><div class="lfi-val">${l.wa_rcv}</div></div>
+          <div class="lead-field-item"><div class="lfi-label">Email Leads</div><div class="lfi-val">${l.em_rcv}</div></div>
+          <div class="lead-field-item"><div class="lfi-label">Weekly Inquiries</div><div class="lfi-val">${l.inq || '—'}</div></div>
+          <div class="lead-field-item"><div class="lfi-label">Missed/Week</div><div class="lfi-val">${l.missed || '—'}</div></div>
+          <div class="lead-field-item lfi-full"><div class="lfi-label">Goals</div><div class="lfi-val">${l.goals || '—'}</div></div>
+          ${l.url ? `<div class="lead-field-item lfi-full"><div class="lfi-label">Website</div><div class="lfi-val"><a href="${l.url}" target="_blank" style="color:var(--accent)">${l.url}</a></div></div>` : ''}
+          <div class="lead-field-item lfi-full"><div class="lfi-label">Biggest Bottleneck</div><div class="lead-bottleneck">"${l.bottleneck}"</div></div>
+        </div>
+        <a href="https://wa.me/${l.wa.replace(/\D/g,'')}" target="_blank" class="btn btn-wa btn-sm" style="display:inline-flex;margin-top:16px;text-decoration:none;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Contact on WhatsApp
+        </a>
+      </div>
+    </div>
+  `).join('') + `<button class="admin-danger-btn" onclick="if(confirm('Delete all?')){localStorage.removeItem('nf_v2_leads');renderAdmin();}">Delete all submissions</button>`;
+}
+function toggleLeadDetail(i) {
+  const d = document.getElementById('ld-' + i);
+  d.classList.toggle('open');
+}
+document.getElementById('admin-overlay').addEventListener('click', e => {
+  if (e.target === document.getElementById('admin-overlay')) closeAdmin();
+});
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ============================================================
+   SOL POINT ANIMATION TRIGGER
+   ============================================================ */
+const solObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.3 });
+document.querySelectorAll('.sol-point').forEach(el => solObs.observe(el));
+
+/* Niche other toggle */
+function toggleNicheOther() {
+  const v = document.getElementById('f-niche').value;
+  const nicheOtherKeys = {en:'Other', es:'Otro', pt:'Outro'};
+  document.getElementById('niche-other-wrap').style.display =
+    (v === nicheOtherKeys[lang] || v === 'Other' || v === 'Otro' || v === 'Outro') ? 'block' : 'none';
+}
+
+/* Goal other toggle — trigger when "Other" checkbox changes */
+document.addEventListener('change', function(e) {
+  if (e.target.id === 'g7') {
+    document.getElementById('goal-other-wrap').style.display = e.target.checked ? 'block' : 'none';
+  }
+});
+
+/* Init */
+calcLoss();
+</script>
+</body>
+</html>
