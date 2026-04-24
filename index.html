@@ -817,13 +817,13 @@ footer {
   <div class="hero-inner reveal">
     <div class="hero-tag" data-i18n="hero_tag">Lead Conversion System</div>
     <h1 class="h1" data-i18n="hero_h1">
-      You're losing clients<br><em class="accent">every single week.</em><br>Without realizing it.
+      How much money are you<br><em class="accent">losing every month</em><br>without realizing it?
     </h1>
     <p class="lead" data-i18n="hero_sub">
-      Every slow reply and weak Google profile is a client that chose your competitor. We fix that — fast.
+      Find out in under 30 seconds. Most businesses lose 30–70% of their sales without realizing it.
     </p>
     <div class="hero-btns">
-      <a href="#form" class="btn btn-cta btn-lg" data-i18n="cta_audit">Get Free Mini Audit</a>
+      <a href="#calc" class="btn btn-cta btn-lg" data-i18n="cta_calc">Calculate My Loss</a>
     </div>
     <div class="hero-loss-strip">
       <div class="hero-loss-item">
@@ -845,7 +845,7 @@ footer {
 <!-- ============================================================
      PAIN CALCULATOR (Loss Amplifier)
      ============================================================ -->
-<section class="pain-calc">
+<section class="pain-calc" id="calc">
   <div class="pain-calc-inner container">
     <div class="reveal">
       <div class="eyebrow" data-i18n="calc_eyebrow">Revenue leak calculator</div>
@@ -875,11 +875,15 @@ footer {
         <span class="calc-val" id="v-conv">35%</span>
       </div>
       <div class="calc-result">
-        <div class="calc-result-label" data-i18n="calc_result_label">Estimated monthly revenue leaking</div>
-        <div class="calc-result-num" id="calc-out">$6,300</div>
-        <div class="calc-result-sub" data-i18n="calc_result_sub">per month in unrealized revenue from lost leads</div>
+        <div class="calc-result-label" data-i18n="calc_result_label">You are losing approximately:</div>
+        <div style="display:flex;flex-direction:column;gap:8px;margin:12px 0">
+          <div class="calc-result-num" style="font-size:clamp(28px,4vw,42px)">💸 <span id="calc-out-month">$6,300</span> <span style="font-size:16px;font-weight:400;opacity:.7" data-i18n="calc_per_month">/ month</span></div>
+          <div class="calc-result-num" style="font-size:clamp(22px,3vw,34px);color:var(--accent)">💸 <span id="calc-out-year">$75,600</span> <span style="font-size:16px;font-weight:400;opacity:.7" data-i18n="calc_per_year">/ year</span></div>
+        </div>
+        <div class="calc-result-sub" data-i18n="calc_result_sub">This is money you could be earning — but you're not collecting it.</div>
+        <div style="font-size:12px;opacity:.5;margin-top:8px" data-i18n="calc_microcopy">Based on real data from similar businesses</div>
       </div>
-      <a href="#form" class="btn btn-cta btn-lg calc-cta" data-i18n="calc_cta">Fix This Now — Free Audit</a>
+      <a href="#form" class="btn btn-cta btn-lg calc-cta" data-i18n="cta_recover">I Want to Recover These Sales</a>
     </div>
   </div>
 </section>
@@ -890,40 +894,35 @@ footer {
 <section class="problem">
   <div class="container">
     <div class="problem-header reveal">
-      <div class="eyebrow" data-i18n="prob_eyebrow">Where you're bleeding</div>
-      <h2 class="h2" data-i18n="prob_h2">The hidden leaks<br>killing your <em class="accent">conversion</em></h2>
-      <p class="lead" style="max-width:520px;margin:16px auto 0" data-i18n="prob_sub">You don't need more ads. You need to stop leaking the demand you already have.</p>
+      <div class="eyebrow" data-i18n="prob_eyebrow">Sound familiar?</div>
+      <h2 class="h2" data-i18n="prob_h2">This happens to<br><em class="accent">most businesses</em></h2>
+      <p class="lead" style="max-width:520px;margin:16px auto 0" data-i18n="prob_sub">You don't need more ads. You need to stop losing the demand you already have.</p>
     </div>
     <div class="problem-grid reveal">
       <div class="problem-card">
         <div class="problem-num">01</div>
-        <h3 data-i18n="p1_h">You respond too slowly</h3>
-        <p data-i18n="p1_p">A lead that waits 2 hours has already booked with someone else. In competitive niches, the first reply wins — every time.</p>
+        <h3 data-i18n="p1_h">You respond too late</h3>
+        <p data-i18n="p1_p">A lead that waits 2 hours has already booked with someone else. The first to reply wins — every time.</p>
       </div>
       <div class="problem-card">
         <div class="problem-num">02</div>
-        <h3 data-i18n="p2_h">Your Google profile is invisible</h3>
-        <p data-i18n="p2_p">Incomplete profiles, no reviews, wrong hours, missing photos. Hundreds of searches per month and you're not in the top 3.</p>
+        <h3 data-i18n="p2_h">You don't follow up</h3>
+        <p data-i18n="p2_p">Most prospects need 4–7 contacts before buying. Without a follow-up system, warm leads go cold and disappear.</p>
       </div>
       <div class="problem-card">
         <div class="problem-num">03</div>
-        <h3 data-i18n="p4_h">Zero follow-up system</h3>
-        <p data-i18n="p4_p">Most prospects need 4–7 touches before booking. Without a follow-up sequence, you're handing warm leads to whoever follows up.</p>
+        <h3 data-i18n="p4_h">You don't qualify your leads</h3>
+        <p data-i18n="p4_p">You treat every inquiry the same. No classification, no prioritization — time gets wasted on the wrong people.</p>
       </div>
       <div class="problem-card">
-        <div class="problem-num">05</div>
-        <h3 data-i18n="p5_h">No web presence that converts</h3>
-        <p data-i18n="p5_p">A generic social page or a slow website kills trust instantly. People are judging you in 3 seconds — and most don't like what they see.</p>
-      </div>
-      <div class="problem-card">
-        <div class="problem-num">06</div>
-        <h3 data-i18n="p6_h">No lead capture system</h3>
-        <p data-i18n="p6_p">No form, no pipeline, no visibility. You have no idea how many people expressed interest and disappeared — because you never captured them.</p>
+        <div class="problem-num">04</div>
+        <h3 data-i18n="p5_h">You lose opportunities without noticing</h3>
+        <p data-i18n="p5_p">No pipeline, no visibility. You have no idea how many people showed interest and disappeared without ever being followed up.</p>
       </div>
     </div>
     <div class="problem-truth reveal">
       <p class="problem-truth-text" data-i18n="prob_truth">The problem isn't that you're not good enough. The problem is that <strong>your systems fail the people who already want to hire you</strong> — and you're completely invisible to <em style="color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5)">thousands who would, if they only knew you existed.</em></p>
-      <a href="#form" class="btn btn-dark btn-lg" style="flex-shrink:0" data-i18n="cta_audit">Get Free Mini Audit</a>
+      <a href="#form" class="btn btn-dark btn-lg" style="flex-shrink:0" data-i18n="cta_recover">I Want to Recover These Sales</a>
     </div>
   </div>
 </section>
@@ -935,15 +934,15 @@ footer {
   <div class="container">
     <div class="solution-inner">
       <div>
-        <div class="eyebrow reveal" data-i18n="sol_eyebrow">The fix</div>
-        <h2 class="h2 reveal" data-i18n="sol_h2">We implement.<br>You <em class="accent">convert more.</em></h2>
-        <p class="lead reveal" data-i18n="sol_sub">No strategy decks. No 6-month roadmaps. We come in, identify the biggest leak, and fix it in weeks — not quarters.</p>
+        <div class="eyebrow reveal" data-i18n="sol_eyebrow">The solution</div>
+        <h2 class="h2 reveal" data-i18n="sol_h2">A system that responds,<br>qualifies, and <em class="accent">recovers sales.</em></h2>
+        <p class="lead reveal" data-i18n="sol_sub">We implement a response and follow-up system that captures every inquiry from first contact — so you stop losing revenue you already earned.</p>
         <div class="solution-points">
           <div class="sol-point reveal">
             <div class="sol-point-bar"></div>
             <div>
-              <h4 data-i18n="sol1_h">We work on what's already costing you money</h4>
-              <p data-i18n="sol1_p">Before adding complexity, we seal the gaps — response speed, Google setup, WhatsApp structure, and follow-up — everything that's quietly bleeding revenue right now.</p>
+              <h4 data-i18n="sol1_h">Recover sales you're already losing</h4>
+              <p data-i18n="sol1_p">Before adding complexity, we fix the gaps — response speed, Google setup, and follow-up — everything quietly bleeding revenue right now.</p>
             </div>
           </div>
           <div class="sol-point reveal reveal-delay-1">
@@ -960,6 +959,10 @@ footer {
               <p data-i18n="sol3_p">You don't touch the technical parts. We configure, install, and hand it over running. Your team just shows up and answers the leads.</p>
             </div>
           </div>
+        </div>
+        <div class="reveal" style="margin-top:40px;background:var(--bg-2);border:1px solid var(--accent-border);border-radius:var(--radius-lg);padding:28px 32px">
+          <div class="eyebrow" style="margin-bottom:12px" data-i18n="demo_eyebrow">Real example</div>
+          <p style="font-size:15px;line-height:1.7;color:var(--ink-80)" data-i18n="demo_text">Business with <strong>120 inquiries/month</strong> → was closing <strong style="color:var(--accent)">12</strong><br>With the system → <strong style="color:var(--green)">30+ closes</strong></p>
         </div>
       </div>
       <div class="solution-checklist reveal reveal-delay-2">
@@ -1107,15 +1110,13 @@ footer {
       <div class="form-step active" id="fs-1">
         <span class="step-label" data-i18n="fs1_label">Step 1 of 4</span>
         <h3 class="step-title" data-i18n="fs1_title">Who are you and where are you?</h3>
-        <div class="fg-row">
-          <div class="fg">
-            <label data-i18n="fl_name">First name *</label>
-            <input type="text" id="f-name" placeholder="Your name">
-          </div>
-          <div class="fg">
-            <label data-i18n="fl_biz">Business name *</label>
-            <input type="text" id="f-biz" placeholder="Your business">
-          </div>
+        <div class="fg">
+          <label data-i18n="fl_name">Full name *</label>
+          <input type="text" id="f-name" placeholder="First and last name">
+        </div>
+        <div class="fg">
+          <label data-i18n="fl_biz">Business name *</label>
+          <input type="text" id="f-biz" placeholder="Your business">
         </div>
         <div class="fg">
           <label data-i18n="fl_country">Country *</label>
@@ -1359,34 +1360,28 @@ footer {
         <h3 class="step-title" data-i18n="fs4_title">Help us understand your volume</h3>
         <div class="fg-row">
           <div class="fg">
-            <label data-i18n="fl_inq">Weekly inquiries (approx.)</label>
+            <label data-i18n="fl_inq">Monthly inquiries (approx.)</label>
             <select id="f-inq">
               <option value="">— Select —</option>
-              <option data-i18n="inq1">Less than 10</option>
-              <option data-i18n="inq2">10 – 30</option>
-              <option data-i18n="inq3">30 – 60</option>
-              <option data-i18n="inq4">60 – 100</option>
-              <option data-i18n="inq5">100 – 200</option>
-              <option data-i18n="inq6">200 – 500</option>
-              <option data-i18n="inq7">More than 500</option>
+              <option data-i18n="inq1">1 – 50</option>
+              <option data-i18n="inq2">51 – 250</option>
+              <option data-i18n="inq3">251 – 1,000</option>
+              <option data-i18n="inq4">+1,000</option>
             </select>
           </div>
           <div class="fg">
-            <label data-i18n="fl_missed">Missed/lost leads per week (approx.)</label>
+            <label data-i18n="fl_missed">Lost opportunities (approx.)</label>
             <select id="f-missed">
               <option value="">— Select —</option>
-              <option data-i18n="miss1">I honestly don't know</option>
-              <option data-i18n="miss2">1 – 5</option>
-              <option data-i18n="miss3">5 – 15</option>
-              <option data-i18n="miss4">15 – 40</option>
-              <option data-i18n="miss5">40 – 100</option>
-              <option data-i18n="miss6">More than 100</option>
+              <option data-i18n="miss1">Less than 10</option>
+              <option data-i18n="miss2">Less than 100</option>
+              <option data-i18n="miss3">More than 100</option>
             </select>
           </div>
         </div>
         <div class="fg">
-          <label data-i18n="fl_url">Website URL (optional)</label>
-          <input type="url" id="f-url" placeholder="https://yourbusiness.com">
+          <label data-i18n="fl_ticket">Average ticket value (optional)</label>
+          <input type="text" id="f-ticket" placeholder="e.g. $200, $1,500...">
         </div>
         <div class="fg">
           <label data-i18n="fl_bottleneck">In one sentence — what is your biggest bottleneck right now? *</label>
@@ -1395,7 +1390,7 @@ footer {
         <div class="form-nav">
           <button class="btn-back-form" onclick="prevFs(4)">← <span data-i18n="btn_back">Back</span></button>
           <span class="step-counter">4 / 4</span>
-          <button class="btn-form-submit" onclick="submitForm()" data-i18n="btn_submit">Get My Free Audit →</button>
+          <button class="btn-form-submit" onclick="submitForm()" data-i18n="cta_recover">I Want to Recover These Sales →</button>
         </div>
       </div>
 
@@ -1474,7 +1469,7 @@ footer {
     <h2 class="h2 reveal" data-i18n="fcta_h2">Every week you wait is another week<br>of <em class="accent">revenue that won't come back.</em></h2>
     <p class="lead reveal" data-i18n="fcta_sub">The audit is free. It takes 3 minutes. And it will show you exactly what's costing you money right now — with no obligation.</p>
     <div class="final-cta-btns reveal">
-      <a href="#form" class="btn btn-cta btn-lg" data-i18n="cta_audit">Get My Free Mini Audit</a>
+      <a href="#form" class="btn btn-cta btn-lg" data-i18n="cta_recover">I Want to Recover These Sales</a>
     </div>
   </div>
 </section>
@@ -1527,8 +1522,10 @@ const T = {
   en: {
     nav_audit: "Free Audit",
     hero_tag: "Lead Conversion System",
-    hero_h1: "You're losing clients<br><em class='accent'>every single week.</em><br>Without realizing it.",
-    hero_sub: "Every slow reply, weak Google profile, and unanswered WhatsApp message is a client that chose your competitor. We fix that — fast.",
+    hero_h1: "How much money are you<br><em class='accent'>losing every month</em><br>without realizing it?",
+    hero_sub: "Find out in under 30 seconds. Most businesses lose 30–70% of their sales without realizing it.",
+    cta_calc: "Calculate My Loss",
+    cta_recover: "I Want to Recover These Sales",
     stat1: "of leads book with whoever responds first",
     stat2: "higher conversion when you reply in under 5 minutes",
     stat3: "of businesses never follow up after first contact",
@@ -1540,22 +1537,26 @@ const T = {
     calc_title: "Your situation",
     calc_l1: "Weekly inquiries", calc_l2: "% of leads not replied within 5 minutes",
     calc_l3: "Average ticket value (USD)", calc_l4: "Your average close rate when you DO respond (%)",
-    calc_result_label: "Estimated monthly revenue leaking",
-    calc_result_sub: "per month in unrealized revenue — from leads who already found you. This multiplies exponentially for everyone who never even discovers you exist.",
-    calc_cta: "Fix This Now — Free Audit",
-    prob_eyebrow: "Where you're bleeding",
-    prob_h2: "The hidden leaks<br>killing your <em class='accent'>conversion</em>",
-    prob_sub: "You don't need more ads. You need to stop leaking the demand you already have.",
-    p1_h: "You respond too slowly", p1_p: "A lead that waits 2 hours has already booked with someone else. In competitive niches, the first reply wins — every time.",
-    p2_h: "Your Google profile is invisible", p2_p: "Incomplete profiles, no reviews, wrong hours, missing photos. Hundreds of searches per month and you're not in the top 3.",
+    calc_result_label: "You are losing approximately:",
+    calc_per_month: "/ month",
+    calc_per_year: "/ year",
+    calc_result_sub: "This is money you could be earning — but you're not collecting it.",
+    calc_microcopy: "Based on real data from similar businesses",
+    calc_cta: "I Want to Recover These Sales",
+    prob_eyebrow: "Sound familiar?",
+    prob_h2: "This happens to<br><em class='accent'>most businesses</em>",
+    prob_sub: "You don't need more ads. You need to stop losing the demand you already have.",
+    p1_h: "You respond too late", p1_p: "A lead that waits 2 hours has already booked with someone else. The first to reply wins — every time.",
+    p2_h: "You don't follow up", p2_p: "Most prospects need 4–7 contacts before buying. Without a follow-up system, warm leads go cold and disappear.",
     p3_h: "WhatsApp is chaos", p3_p: "No quick replies, no structure, no follow-up after first contact. Leads feel ignored and move on.",
-    p4_h: "Zero follow-up system", p4_p: "Most prospects need 4–7 touches before booking. Without a follow-up sequence, warm leads go cold fast.",
-    p5_h: "No web presence that converts", p5_p: "A generic social page or a slow website kills trust instantly. People are judging you in 3 seconds.",
+    p4_h: "You don't qualify your leads", p4_p: "You treat every inquiry the same. No classification, no prioritization — time gets wasted on the wrong people.",
+    p5_h: "You lose opportunities without noticing", p5_p: "No pipeline, no visibility. You have no idea how many people showed interest and disappeared without being followed up.",
     p6_h: "No lead capture system", p6_p: "No form, no pipeline, no visibility. You have no idea how many people expressed interest and disappeared.",
-    prob_truth: "The problem isn't that you're not good enough. The problem is that <strong>your systems fail the people who already want to hire you</strong> — and you're completely invisible to <em style=\"color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5)\">thousands who would, if they only knew you existed.</em>",
-    sol_eyebrow: "The fix", sol_h2: "We implement.<br>You <em class='accent'>convert more.</em>",
-    sol_sub: "No strategy decks. No 6-month roadmaps. We come in, identify the biggest leak, and fix it in weeks — not quarters.",
-    sol1_h: "We work on what's already costing you money", sol1_p: "Before adding complexity, we seal the gaps — response speed, Google setup, WhatsApp structure, and follow-up.",
+    prob_truth: "The problem isn't that you're not good enough. The problem is that <strong>your response and follow-up system is failing the people who already want to hire you.</strong>",
+    sol_eyebrow: "The solution", sol_h2: "A system that responds,<br>qualifies, and <em class='accent'>recovers sales.</em>",
+    sol_sub: "We implement a response and follow-up system that captures every inquiry from first contact — so you stop losing revenue you already earned.",
+    sol1_h: "Recover sales you're already losing", sol1_p: "Before adding complexity, we fix the gaps — response speed, Google setup, and follow-up — everything quietly bleeding revenue right now.",
+    demo_eyebrow: "Real example", demo_text: "Business with <strong>120 inquiries/month</strong> → was closing <strong>12</strong><br>With the system → <strong>30+ closes</strong>",
     sol2_h: "Built for local service businesses", sol2_p: "Dentists, clinics, lawyers, real estate agencies, home services. We know your buyers and where you lose them.",
     sol3_h: "Done for you — fully remote", sol3_p: "You don't touch the technical parts. We configure, install, and hand it over running.",
     sol_what_we_fix: "What we actually fix",
@@ -1582,7 +1583,7 @@ const T = {
     form_h2: "Tell us about your business.<br>We'll show you the gaps.",
     form_sub: "3 minutes. No pitch. No pressure. You'll receive a specific, honest breakdown of your biggest lead conversion leaks — and what to fix first.",
     fs1_label: "Step 1 of 4", fs1_title: "Who are you and where are you?",
-    fl_name: "First name *", fl_biz: "Business name *", fl_country: "Country *", fl_wa: "WhatsApp *", fl_email: "Email *",
+    fl_name: "Full name *", fl_biz: "Business name *", fl_country: "Country *", fl_wa: "WhatsApp *", fl_email: "Email *",
     fs2_label: "Step 2 of 4", fs2_title: "Tell us about your business",
     fl_niche: "Business type *", fl_gbp: "Do you have a Google Business Profile?", fl_wa_rcv: "Do you receive leads via WhatsApp?", fl_em_rcv: "Do you receive leads via email?",
     opt_yes: "Yes", opt_no: "No", opt_unsure: "Not sure",
@@ -1591,9 +1592,9 @@ const T = {
     fl_goals: "Select all that apply",
     goal1: "Get more clients", goal2: "Respond faster", goal3: "Improve Google", goal4: "Automate leads", goal5: "Build a website", goal6: "Better follow-up", goal7: "Other",
     fs4_label: "Step 4 of 4", fs4_title: "Help us understand your volume",
-    fl_inq: "Weekly inquiries (approx.)", fl_missed: "Missed/lost leads per week (approx.)", fl_url: "Website URL (optional)", fl_bottleneck: "In one sentence — what is your biggest bottleneck right now? *",
-    inq1: "Less than 10", inq2: "10 – 30", inq3: "30 – 60", inq4: "60 – 100", inq5: "100 – 200", inq6: "200 – 500", inq7: "More than 500",
-    miss1: "I honestly don't know", miss2: "1 – 5", miss3: "5 – 15", miss4: "15 – 40", miss5: "40 – 100", miss6: "More than 100",
+    fl_inq: "Monthly inquiries (approx.)", fl_missed: "Lost opportunities (approx.)", fl_ticket: "Average ticket value (optional)", fl_url: "Website URL (optional)", fl_bottleneck: "In one sentence — what is your biggest bottleneck right now? *",
+    inq1: "1 – 50", inq2: "51 – 250", inq3: "251 – 1,000", inq4: "+1,000",
+    miss1: "Less than 10", miss2: "Less than 100", miss3: "More than 100",
     btn_next: "Continue →", btn_back: "Back", btn_submit: "Get My Free Audit →",
     success_h: "Received. Expect a reply within 24 hours.",
     success_p: "We'll review your details and send you a specific, actionable breakdown of your biggest conversion leaks — and what to fix first. No fluff.",
@@ -1613,8 +1614,10 @@ const T = {
   es: {
     nav_audit: "Auditoría Gratis",
     hero_tag: "Sistema de Conversión de Leads",
-    hero_h1: "Estás perdiendo clientes<br><em class='accent'>cada semana.</em><br>Sin darte cuenta.",
-    hero_sub: "Cada respuesta lenta, perfil de Google débil y mensaje de WhatsApp sin respuesta es un cliente que eligió a tu competencia. Lo arreglamos — rápido.",
+    hero_h1: "¿Cuánto dinero estás perdiendo<br><em class='accent'>cada mes</em><br>sin darte cuenta?",
+    hero_sub: "Descubrilo en menos de 30 segundos. La mayoría de los negocios pierde entre el 30% y 70% de sus ventas sin saberlo.",
+    cta_calc: "Calcular Mi Pérdida",
+    cta_recover: "Quiero Recuperar Estas Ventas",
     stat1: "de los leads contratan al primero que responde",
     stat2: "más conversión cuando respondés en menos de 5 minutos",
     stat3: "de los negocios nunca hace seguimiento tras el primer contacto",
@@ -1626,22 +1629,26 @@ const T = {
     calc_title: "Tu situación",
     calc_l1: "Consultas por semana", calc_l2: "% de leads sin respuesta en 5 minutos",
     calc_l3: "Valor promedio del cliente (USD)", calc_l4: "Tu tasa de cierre cuando SÍ respondés (%)",
-    calc_result_label: "Ingresos estimados que se pierden por mes",
-    calc_result_sub: "por mes en ingresos no realizados — de leads que ya te encontraron. Esto se multiplica exponencialmente por todos los que nunca saben que existís.",
-    calc_cta: "Solucioná esto — Auditoría Gratis",
-    prob_eyebrow: "Dónde estás sangrando",
-    prob_h2: "Las fugas ocultas que están<br>matando tu <em class='accent'>conversión</em>",
+    calc_result_label: "Estás perdiendo aproximadamente:",
+    calc_per_month: "/ mes",
+    calc_per_year: "/ año",
+    calc_result_sub: "Este es dinero que podrías estar ganando — pero no lo estás cobrando.",
+    calc_microcopy: "Basado en datos reales de negocios similares",
+    calc_cta: "Quiero Recuperar Estas Ventas",
+    prob_eyebrow: "¿Te suena familiar?",
+    prob_h2: "Esto le pasa a<br><em class='accent'>la mayoría de los negocios</em>",
     prob_sub: "No necesitás más publicidad. Necesitás dejar de perder la demanda que ya tenés.",
-    p1_h: "Respondés demasiado lento", p1_p: "Un lead que espera 2 horas ya reservó con otro. En nichos competitivos, el primero en responder gana — siempre.",
-    p2_h: "Tu perfil de Google es invisible", p2_p: "Perfiles incompletos, sin reseñas, horarios incorrectos. Cientos de búsquedas por mes y no estás en los 3 primeros.",
-    p3_h: "WhatsApp es un caos", p3_p: "Sin respuestas rápidas, sin estructura, sin seguimiento. Los leads se sienten ignorados y se van.",
-    p4_h: "Sin sistema de seguimiento", p4_p: "La mayoría necesita 4–7 contactos antes de reservar. Sin secuencia de seguimiento, los leads tibios se enfrían.",
-    p5_h: "Sin presencia web que convierta", p5_p: "Una página genérica o sitio lento destruye la confianza al instante. Te juzgan en 3 segundos.",
+    p1_h: "Respondés tarde", p1_p: "Un lead que espera 2 horas ya reservó con otro. El primero en responder gana — siempre.",
+    p2_h: "No hacés seguimiento", p2_p: "La mayoría necesita 4–7 contactos antes de comprar. Sin sistema de seguimiento, los leads tibios se enfrían y desaparecen.",
+    p3_h: "No clasificás tus leads", p3_p: "Sin estructura, sin estructura, sin seguimiento. Los leads se sienten ignorados y se van.",
+    p4_h: "No calificás tus leads", p4_p: "Tratás todas las consultas igual. Sin clasificación ni priorización — perdés tiempo con las personas equivocadas.",
+    p5_h: "Perdés oportunidades sin darte cuenta", p5_p: "Sin pipeline, sin visibilidad. No sabés cuántos mostraron interés y desaparecieron sin que nadie hiciera seguimiento.",
     p6_h: "Sin sistema de captura de leads", p6_p: "Sin formulario, sin pipeline, sin visibilidad. No sabés cuántos mostraron interés y desaparecieron.",
-    prob_truth: "El problema no es que no seas suficientemente bueno. El problema es que <strong>tus sistemas fallan a las personas que ya quieren contratarte</strong> — y sos completamente invisible para <em style=\"color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5)\">miles que lo harían, si tan solo supieran que existís.</em>",
-    sol_eyebrow: "La solución", sol_h2: "Nosotros implementamos.<br>Vos <em class='accent'>convertís más.</em>",
-    sol_sub: "Sin presentaciones. Sin roadmaps de 6 meses. Entramos, identificamos la fuga más grande y la arreglamos en semanas.",
-    sol1_h: "Trabajamos en lo que ya te está costando dinero", sol1_p: "Antes de agregar complejidad, sellamos las brechas: velocidad de respuesta, Google, estructura de WhatsApp y seguimiento.",
+    prob_truth: "El problema no es que no seas suficientemente bueno. El problema es que <strong>tu sistema de respuesta y seguimiento está fallando a las personas que ya quieren contratarte.</strong>",
+    sol_eyebrow: "La solución", sol_h2: "Un sistema que responde,<br>clasifica y <em class='accent'>recupera ventas.</em>",
+    sol_sub: "Implementamos un sistema de respuesta y seguimiento que captura cada consulta desde el primer contacto — para que dejés de perder ingresos que ya ganaste.",
+    sol1_h: "Recuperá las ventas que ya estás perdiendo", sol1_p: "Antes de agregar complejidad, arreglamos las brechas — velocidad de respuesta, Google y seguimiento — todo lo que está sangrando ingresos ahora mismo.",
+    demo_eyebrow: "Ejemplo real", demo_text: "Negocio con <strong>120 consultas/mes</strong> → cerraba <strong>12</strong><br>Con el sistema → <strong>30+ cierres</strong>",
     sol2_h: "Construido para negocios de servicios locales", sol2_p: "Dentistas, clínicas, abogados, inmobiliarias, servicios del hogar. Conocemos tus compradores y dónde los perdés.",
     sol3_h: "Hecho para vos — 100% remoto", sol3_p: "No tocás las partes técnicas. Configuramos, instalamos y te lo entregamos funcionando.",
     sol_what_we_fix: "Qué arreglamos realmente",
@@ -1668,7 +1675,7 @@ const T = {
     form_h2: "Contanos sobre tu negocio.<br>Te mostramos las fugas.",
     form_sub: "3 minutos. Sin pitch. Sin presión. Recibirás un análisis específico y honesto de tus principales fugas de conversión — y qué corregir primero.",
     fs1_label: "Paso 1 de 4", fs1_title: "¿Quién sos y dónde estás?",
-    fl_name: "Nombre *", fl_biz: "Nombre del negocio *", fl_country: "País *", fl_wa: "WhatsApp *", fl_email: "Email *",
+    fl_name: "Nombre completo *", fl_biz: "Nombre del negocio *", fl_country: "País *", fl_wa: "WhatsApp *", fl_email: "Email *",
     fs2_label: "Paso 2 de 4", fs2_title: "Contanos sobre tu negocio",
     fl_niche: "Tipo de negocio *", fl_gbp: "¿Tenés un Perfil de Google Business?", fl_wa_rcv: "¿Recibís leads por WhatsApp?", fl_em_rcv: "¿Recibís leads por email?",
     opt_yes: "Sí", opt_no: "No", opt_unsure: "No estoy seguro/a",
@@ -1677,10 +1684,10 @@ const T = {
     fl_goals: "Seleccioná todos los que apliquen",
     goal1: "Conseguir más clientes", goal2: "Responder más rápido", goal3: "Mejorar Google", goal4: "Automatizar leads", goal5: "Crear sitio web", goal6: "Mejorar seguimiento", goal7: "Otro",
     fs4_label: "Paso 4 de 4", fs4_title: "Ayudanos a entender tu volumen",
-    fl_inq: "Consultas por semana (aprox.)", fl_missed: "Leads perdidos por semana (aprox.)", fl_url: "URL de tu sitio web (opcional)", fl_bottleneck: "En una oración — ¿cuál es tu mayor cuello de botella ahora mismo? *",
-    inq1: "Menos de 10", inq2: "10 – 30", inq3: "30 – 60", inq4: "60 – 100", inq5: "100 – 200", inq6: "200 – 500", inq7: "Más de 500",
-    miss1: "Honestamente no lo sé", miss2: "1 – 5", miss3: "5 – 15", miss4: "15 – 40", miss5: "40 – 100", miss6: "Más de 100",
-    btn_next: "Continuar →", btn_back: "Atrás", btn_submit: "Obtener Mi Auditoría Gratis →",
+    fl_inq: "Consultas por mes (aprox.)", fl_missed: "Oportunidades perdidas (aprox.)", fl_ticket: "Ticket promedio (opcional)", fl_url: "URL de tu sitio web (opcional)", fl_bottleneck: "En una oración — ¿cuál es tu mayor cuello de botella ahora mismo? *",
+    inq1: "1 – 50", inq2: "51 – 250", inq3: "251 – 1.000", inq4: "+1.000",
+    miss1: "Menos de 10", miss2: "Menos de 100", miss3: "Más de 100",
+    btn_next: "Continuar →", btn_back: "Atrás", btn_submit: "Quiero Recuperar Estas Ventas →",
     success_h: "Recibido. Esperá una respuesta en 24 horas.",
     success_p: "Revisaremos tu información y te enviaremos un análisis específico y accionable de tus principales fugas de conversión — qué arreglar primero. Sin relleno.",
     success_wa: "También hablá con nosotros por WhatsApp",
@@ -1699,8 +1706,10 @@ const T = {
   pt: {
     nav_audit: "Auditoria Grátis",
     hero_tag: "Sistema de Conversão de Leads",
-    hero_h1: "Você está perdendo clientes<br><em class='accent'>toda semana.</em><br>Sem perceber.",
-    hero_sub: "Cada resposta lenta, perfil fraco no Google e mensagem de WhatsApp sem resposta é um cliente que escolheu o seu concorrente. Nós resolvemos isso — rápido.",
+    hero_h1: "Quanto dinheiro você está<br><em class='accent'>perdendo por mês</em><br>sem perceber?",
+    hero_sub: "Descubra em menos de 30 segundos. A maioria das empresas perde entre 30% e 70% das suas vendas sem saber.",
+    cta_calc: "Calcular Minha Perda",
+    cta_recover: "Quero Recuperar Essas Vendas",
     stat1: "dos leads contratam quem responde primeiro",
     stat2: "mais conversão quando você responde em menos de 5 minutos",
     stat3: "das empresas nunca fazem acompanhamento após o primeiro contato",
@@ -1712,22 +1721,26 @@ const T = {
     calc_title: "Sua situação",
     calc_l1: "Consultas por semana", calc_l2: "% de leads sem resposta em 5 minutos",
     calc_l3: "Valor médio do cliente (USD)", calc_l4: "Sua taxa de fechamento quando VOCÊ responde (%)",
-    calc_result_label: "Receita mensal estimada que está vazando",
-    calc_result_sub: "por mês em receita não realizada — de leads que já te encontraram. Isso se multiplica exponencialmente pelos que nunca descobrem que você existe.",
-    calc_cta: "Resolva Isso Agora — Auditoria Grátis",
-    prob_eyebrow: "Onde você está sangrando",
-    prob_h2: "Os vazamentos ocultos<br>matando a sua <em class='accent'>conversão</em>",
-    prob_sub: "Você não precisa de mais anúncios. Você precisa parar de desperdiçar a demanda que já tem.",
-    p1_h: "Você responde devagar demais", p1_p: "Um lead que espera 2 horas já agendou com outro. Em nichos competitivos, quem responde primeiro vence — sempre.",
-    p2_h: "Seu perfil no Google é invisível", p2_p: "Perfis incompletos, sem avaliações, horários errados. Centenas de buscas por mês e você não aparece nos 3 primeiros.",
-    p3_h: "WhatsApp é um caos", p3_p: "Sem respostas rápidas, sem estrutura, sem acompanhamento. Os leads se sentem ignorados e vão embora.",
-    p4_h: "Zero sistema de acompanhamento", p4_p: "A maioria precisa de 4–7 contatos antes de contratar. Sem sequência de follow-up, leads mornos esfriamrapido.",
-    p5_h: "Sem presença web que converte", p5_p: "Uma página genérica ou site lento destrói a confiança na hora. As pessoas te julgam em 3 segundos.",
+    calc_result_label: "Você está perdendo aproximadamente:",
+    calc_per_month: "/ mês",
+    calc_per_year: "/ ano",
+    calc_result_sub: "Este é dinheiro que você poderia estar ganhando — mas não está cobrando.",
+    calc_microcopy: "Baseado em dados reais de empresas similares",
+    calc_cta: "Quero Recuperar Essas Vendas",
+    prob_eyebrow: "Isso soa familiar?",
+    prob_h2: "Isso acontece com<br><em class='accent'>a maioria das empresas</em>",
+    prob_sub: "Você não precisa de mais anúncios. Você precisa parar de perder a demanda que já tem.",
+    p1_h: "Você responde tarde demais", p1_p: "Um lead que espera 2 horas já agendou com outro. Quem responde primeiro vence — sempre.",
+    p2_h: "Você não faz follow-up", p2_p: "A maioria precisa de 4–7 contatos antes de comprar. Sem sistema de acompanhamento, leads mornos esfriam e somem.",
+    p3_h: "Você não classifica seus leads", p3_p: "Sem respostas rápidas, sem estrutura, sem acompanhamento. Os leads se sentem ignorados e vão embora.",
+    p4_h: "Você não qualifica seus leads", p4_p: "Você trata todas as consultas igual. Sem classificação nem priorização — perde tempo com as pessoas erradas.",
+    p5_h: "Você perde oportunidades sem perceber", p5_p: "Sem pipeline, sem visibilidade. Você não sabe quantas pessoas demonstraram interesse e sumiram sem acompanhamento.",
     p6_h: "Sem sistema de captura de leads", p6_p: "Sem formulário, sem pipeline, sem visibilidade. Você não sabe quantas pessoas demonstraram interesse e sumiram.",
-    prob_truth: "O problema não é que você não seja bom o suficiente. O problema é que <strong>seus sistemas falham com as pessoas que já querem te contratar</strong> — e você é completamente invisível para <em style=\"color:#fff;text-decoration:underline;text-decoration-color:rgba(255,255,255,0.5)\">milhares que contratariam, se soubessem que você existe.</em>",
-    sol_eyebrow: "A solução", sol_h2: "Nós implementamos.<br>Você <em class='accent'>converte mais.</em>",
-    sol_sub: "Sem apresentações. Sem roadmaps de 6 meses. Entramos, identificamos o maior vazamento e corrigimos em semanas.",
-    sol1_h: "Trabalhamos no que já está te custando dinheiro", sol1_p: "Antes de adicionar complexidade, selamos as brechas: velocidade de resposta, Google, estrutura de WhatsApp e follow-up.",
+    prob_truth: "O problema não é que você não seja bom o suficiente. O problema é que <strong>seu sistema de resposta e follow-up está falhando com as pessoas que já querem te contratar.</strong>",
+    sol_eyebrow: "A solução", sol_h2: "Um sistema que responde,<br>qualifica e <em class='accent'>recupera vendas.</em>",
+    sol_sub: "Implementamos um sistema de resposta e follow-up que captura cada consulta desde o primeiro contato — para você parar de perder receita que já ganhou.",
+    sol1_h: "Recupere as vendas que já está perdendo", sol1_p: "Antes de adicionar complexidade, corrigimos as brechas — velocidade de resposta, Google e follow-up — tudo que está sangrando receita agora.",
+    demo_eyebrow: "Exemplo real", demo_text: "Empresa com <strong>120 consultas/mês</strong> → fechava <strong>12</strong><br>Com o sistema → <strong>30+ fechamentos</strong>",
     sol2_h: "Feito para empresas de serviços locais", sol2_p: "Dentistas, clínicas, advogados, imobiliárias, serviços domésticos. Conhecemos seus compradores e onde você os perde.",
     sol3_h: "Feito para você — 100% remoto", sol3_p: "Você não toca nas partes técnicas. Configuramos, instalamos e entregamos funcionando.",
     sol_what_we_fix: "O que realmente corrigimos",
@@ -1754,7 +1767,7 @@ const T = {
     form_h2: "Conte-nos sobre seu negócio.<br>Mostraremos os vazamentos.",
     form_sub: "3 minutos. Sem pitch. Sem pressão. Você receberá uma análise específica e honesta dos seus maiores vazamentos de conversão — e o que corrigir primeiro.",
     fs1_label: "Passo 1 de 4", fs1_title: "Quem é você e onde está?",
-    fl_name: "Nome *", fl_biz: "Nome do negócio *", fl_country: "País *", fl_wa: "WhatsApp *", fl_email: "Email *",
+    fl_name: "Nome completo *", fl_biz: "Nome do negócio *", fl_country: "País *", fl_wa: "WhatsApp *", fl_email: "Email *",
     fs2_label: "Passo 2 de 4", fs2_title: "Conte-nos sobre seu negócio",
     fl_niche: "Tipo de negócio *", fl_gbp: "Você tem um Perfil do Google Business?", fl_wa_rcv: "Você recebe leads pelo WhatsApp?", fl_em_rcv: "Você recebe leads por email?",
     opt_yes: "Sim", opt_no: "Não", opt_unsure: "Não tenho certeza",
@@ -1763,10 +1776,10 @@ const T = {
     fl_goals: "Selecione todos que se aplicam",
     goal1: "Conseguir mais clientes", goal2: "Responder mais rápido", goal3: "Melhorar Google", goal4: "Automatizar leads", goal5: "Criar site", goal6: "Melhorar follow-up", goal7: "Outro",
     fs4_label: "Passo 4 de 4", fs4_title: "Ajude-nos a entender seu volume",
-    fl_inq: "Consultas por semana (aprox.)", fl_missed: "Leads perdidos por semana (aprox.)", fl_url: "URL do seu site (opcional)", fl_bottleneck: "Em uma frase — qual é seu maior gargalo agora? *",
-    inq1: "Menos de 10", inq2: "10 – 30", inq3: "30 – 60", inq4: "60 – 100", inq5: "100 – 200", inq6: "200 – 500", inq7: "Mais de 500",
-    miss1: "Honestamente não sei", miss2: "1 – 5", miss3: "5 – 15", miss4: "15 – 40", miss5: "40 – 100", miss6: "Mais de 100",
-    btn_next: "Continuar →", btn_back: "Voltar", btn_submit: "Obter Minha Auditoria Grátis →",
+    fl_inq: "Consultas por mês (aprox.)", fl_missed: "Oportunidades perdidas (aprox.)", fl_ticket: "Ticket médio (opcional)", fl_url: "URL do seu site (opcional)", fl_bottleneck: "Em uma frase — qual é seu maior gargalo agora? *",
+    inq1: "1 – 50", inq2: "51 – 250", inq3: "251 – 1.000", inq4: "+1.000",
+    miss1: "Menos de 10", miss2: "Menos de 100", miss3: "Mais de 100",
+    btn_next: "Continuar →", btn_back: "Voltar", btn_submit: "Quero Recuperar Essas Vendas →",
     success_h: "Recebido. Espere uma resposta em 24 horas.",
     success_p: "Revisaremos seus dados e enviaremos uma análise específica e acionável dos seus maiores vazamentos de conversão — e o que corrigir primeiro.",
     success_wa: "Também fale conosco no WhatsApp",
@@ -1817,7 +1830,8 @@ function calcLoss() {
   const potential_monthly = (fast_leads + slow_leads) * (conv / 100) * val * 4.3;
   const actual_monthly = (fast_revenue + slow_revenue) * 4.3;
   const leaked = Math.round(potential_monthly - actual_monthly);
-  document.getElementById('calc-out').textContent = '$' + leaked.toLocaleString();
+  document.getElementById('calc-out-month').textContent = '$' + leaked.toLocaleString();
+  document.getElementById('calc-out-year').textContent = '$' + (leaked * 12).toLocaleString();
 }
 
 /* ============================================================
@@ -1891,6 +1905,7 @@ function submitForm() {
     goals: getChecked() + (document.getElementById('g7').checked && document.getElementById('f-goal-other').value ? ' — ' + document.getElementById('f-goal-other').value : ''),
     inq: document.getElementById('f-inq').value,
     missed: document.getElementById('f-missed').value,
+    ticket: document.getElementById('f-ticket') ? document.getElementById('f-ticket').value.trim() : '',
     url: document.getElementById('f-url').value.trim(),
     bottleneck
   };
@@ -1923,6 +1938,7 @@ function submitForm() {
       objetivos:         entry.goals,
       consultas_semana:  entry.inq,
       leads_perdidos:    entry.missed,
+      ticket_promedio:   entry.ticket,
       sitio_web:         entry.url,
       cuello_botella:    entry.bottleneck,
       idioma:            entry.lang,
