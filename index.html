@@ -299,17 +299,17 @@ nav {
   margin-bottom: 20px; gap: 16px;
 }
 .calc-row label {
-  font-size: 14px; color: rgba(255,255,255,0.78); max-width: 200px; line-height: 1.4;
+  font-size: 14px; color: #FFB703; width: 170px; flex-shrink: 0; line-height: 1.4;
 }
 .calc-row input[type="range"] {
-  flex: 1; accent-color: var(--accent);
+  flex: 1; min-width: 0; accent-color: var(--accent);
   height: 4px; cursor: pointer;
 }
 .calc-row .calc-val {
   font-family: var(--font-head); font-size: 18px; font-weight: 700;
   color: #FFB703;
   text-shadow: 0 0 18px rgba(255,183,3,0.45);
-  min-width: 44px; text-align: right;
+  width: 54px; flex-shrink: 0; text-align: right;
 }
 .calc-result {
   margin-top: 24px; padding: 20px 24px;
@@ -825,25 +825,25 @@ footer {
       Find out in under 30 seconds. Most businesses lose 30–70% of their sales without realizing it.
     </p>
     <div style="margin:0 0 30px 0;max-width:600px;margin-left:auto;margin-right:auto">
-      <h4 data-i18n="calc_title" style="font-size:16px;font-weight:600;margin-bottom:24px;color:var(--ink)">Your situation</h4>
+      <h4 data-i18n="calc_title" style="font-size:16px;font-weight:600;margin-bottom:24px;color:#FFB703">Your situation</h4>
       <div class="calc-row">
         <label data-i18n="calc_l1">Weekly inquiries</label>
-        <input type="range" id="r-inq" min="5" max="300" value="40" step="5" oninput="calcLoss()" style="width:100%">
+        <input type="range" id="r-inq" min="5" max="300" value="40" step="5" oninput="calcLoss()">
         <span class="calc-val" id="v-inq">40</span>
       </div>
       <div class="calc-row">
         <label data-i18n="calc_l2">% not answered same day</label>
-        <input type="range" id="r-miss" min="5" max="80" value="30" step="5" oninput="calcLoss()" style="width:100%">
+        <input type="range" id="r-miss" min="5" max="80" value="30" step="5" oninput="calcLoss()">
         <span class="calc-val" id="v-miss">30%</span>
       </div>
       <div class="calc-row">
         <label data-i18n="calc_l3">Average ticket value (USD)</label>
-        <input type="range" id="r-val" min="50" max="5000" value="300" step="50" oninput="calcLoss()" style="width:100%">
+        <input type="range" id="r-val" min="50" max="5000" value="300" step="50" oninput="calcLoss()">
         <span class="calc-val" id="v-val">$300</span>
       </div>
       <div class="calc-row">
         <label data-i18n="calc_l4">Conversion rate with fast reply (%)</label>
-        <input type="range" id="r-conv" min="10" max="70" value="35" step="5" oninput="calcLoss()" style="width:100%">
+        <input type="range" id="r-conv" min="10" max="70" value="35" step="5" oninput="calcLoss()">
         <span class="calc-val" id="v-conv">35%</span>
       </div>
       <div class="calc-result" style="margin-top:24px;background:rgba(0,0,0,0.02);padding:20px;border-radius:12px">
